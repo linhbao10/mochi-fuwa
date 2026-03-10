@@ -889,6 +889,22 @@ header.scrolled .logo {
    border-radius: 20px;
 }
 
+/* Mochi image on top of box */
+.box-mochi-img {
+   width: 120px;
+   height: 120px;
+   object-fit: cover;
+   border-radius: 50%;
+   border: 3px solid rgba(255,255,255,0.6);
+   box-shadow: 0 4px 16px rgba(159, 0, 49, 0.25);
+   margin-bottom: 6px;
+}
+
+.mochi-box-face.top .box-lid-text {
+   font-size: 1rem;
+   letter-spacing: 3px;
+}
+
 /* Reason cards */
 .mochi-box-reasons {
    display: flex;
