@@ -889,73 +889,27 @@ header.scrolled .logo {
    border-radius: 20px;
 }
 
-/* 3D Mochi on top of box */
-.mochi-3d {
+/* Hello Kitty Mochi floating on top of 3D box */
+.mochi-box-container {
    position: relative;
    display: flex;
    flex-direction: column;
    align-items: center;
 }
 
-.mochi-3d-body {
-   width: 130px;
-   height: 100px;
-   background: radial-gradient(ellipse at 35% 30%, #fff5f8 0%, #ffd6e4 30%, #ffb6d0 55%, #f799b8 75%, #e8809f 100%);
-   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+.mochi-on-top {
+   width: 160px;
+   height: auto;
    position: relative;
-   box-shadow:
-       0 8px 20px rgba(159, 0, 49, 0.2),
-       0 2px 6px rgba(159, 0, 49, 0.1),
-       inset 0 -10px 20px rgba(231, 128, 159, 0.3),
-       inset 0 5px 15px rgba(255, 255, 255, 0.5);
+   z-index: 10;
+   margin-bottom: -30px;
+   filter: drop-shadow(0 10px 20px rgba(159, 0, 49, 0.2));
    animation: mochiFloat 3s ease-in-out infinite;
-}
-
-/* Shiny highlight */
-.mochi-3d-shine {
-   position: absolute;
-   width: 35px;
-   height: 25px;
-   background: radial-gradient(ellipse, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 70%);
-   border-radius: 50%;
-   top: 15px;
-   left: 25px;
-}
-
-/* Cute blush marks */
-.mochi-3d-blush {
-   position: absolute;
-   width: 22px;
-   height: 12px;
-   background: rgba(255, 130, 160, 0.4);
-   border-radius: 50%;
-   bottom: 30px;
-}
-.mochi-3d-blush.left-blush {
-   left: 22px;
-}
-.mochi-3d-blush.right-blush {
-   right: 22px;
-}
-
-/* Shadow under the mochi */
-.mochi-3d-shadow {
-   width: 100px;
-   height: 20px;
-   background: radial-gradient(ellipse, rgba(159, 0, 49, 0.15) 0%, transparent 70%);
-   border-radius: 50%;
-   margin-top: 2px;
-   animation: mochiShadow 3s ease-in-out infinite;
 }
 
 @keyframes mochiFloat {
    0%, 100% { transform: translateY(0); }
-   50% { transform: translateY(-8px); }
-}
-
-@keyframes mochiShadow {
-   0%, 100% { transform: scale(1); opacity: 1; }
-   50% { transform: scale(0.8); opacity: 0.6; }
+   50% { transform: translateY(-12px); }
 }
 
 /* Reason cards */
