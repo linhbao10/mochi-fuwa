@@ -226,6 +226,78 @@
            opacity: 1;
        }
 
+       /* New Arrivals Banner */
+       .new-arrivals-banner {
+           max-width: 1100px;
+           margin: 0 auto 20px;
+           padding: 0 20px;
+           text-align: center;
+       }
+       .new-arrivals-banner-inner {
+           background: linear-gradient(135deg, #9F0031, #f36f21);
+           border-radius: 12px;
+           padding: 14px 24px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           gap: 12px;
+       }
+       .new-arrivals-banner-inner span {
+           color: #fff;
+           font-family: 'Cormorant Garamond', serif;
+           font-size: 1.1rem;
+           font-weight: 500;
+           letter-spacing: 1px;
+       }
+       .new-arrivals-banner-inner .new-tag {
+           background: #f5c518;
+           color: #9F0031;
+           font-family: 'Quicksand', sans-serif;
+           font-size: 0.65rem;
+           font-weight: 700;
+           padding: 3px 10px;
+           border-radius: 20px;
+           letter-spacing: 1.5px;
+           text-transform: uppercase;
+           animation: pulse-badge 2s ease-in-out infinite;
+       }
+       @keyframes pulse-badge {
+           0%, 100% { transform: scale(1); }
+           50% { transform: scale(1.08); }
+       }
+
+       /* New Arrivals Accordion */
+       .menu-accordion.new-arrivals {
+           border-top: none;
+           max-width: 1100px;
+           margin: 0 auto;
+           padding: 0 20px;
+       }
+       .new-arrivals .accordion-header h2 {
+           color: #f36f21;
+       }
+       .new-arrivals .accordion-toggle {
+           color: #f36f21;
+       }
+       .new-arrivals .product-card {
+           position: relative;
+       }
+       .new-arrivals .product-card::after {
+           content: 'NEW';
+           position: absolute;
+           top: 14px;
+           left: 14px;
+           background: #f5c518;
+           color: #9F0031;
+           font-family: 'Quicksand', sans-serif;
+           font-size: 0.6rem;
+           font-weight: 700;
+           padding: 3px 10px;
+           border-radius: 20px;
+           letter-spacing: 1.5px;
+           z-index: 2;
+       }
+
        /* Responsive */
        @media (max-width: 768px) {
            .accordion-header h2 {
@@ -289,6 +361,70 @@
 
    <!-- All Menu Items -->
    <section class="menu-full">
+
+       <!-- New Arrivals Banner -->
+       <div class="new-arrivals-banner">
+           <div class="new-arrivals-banner-inner">
+               <span class="new-tag">NEW</span>
+               <span>S&#7843;n ph&#7849;m m&#7899;i nh&#7845;t t&#7915; Mochi Fuwa &#8212; Kh&aacute;m ph&aacute; ngay!</span>
+           </div>
+       </div>
+
+       <!-- New Arrivals -->
+       <div class="menu-accordion new-arrivals">
+           <div class="accordion-header" onclick="toggleAccordion(this)">
+               <h2>New Arrivals</h2>
+               <button class="accordion-toggle" aria-label="Toggle">+</button>
+           </div>
+           <div class="accordion-content open">
+               <div class="product-row">
+                   <div class="product-card">
+                       <div class="product-card-img">
+                           <img src="mochi-9.jpeg" alt="Matcha Rose">
+                       </div>
+                       <div class="product-card-info">
+                           <h3>Matcha Rose</h3>
+                           <span class="product-dash"></span>
+                           <p class="product-price">52.000 VND</p>
+                       </div>
+                       <button class="add-to-cart-btn" onclick="addToCart('Matcha Rose', 52000, 'mochi-9.jpeg', this)">Th&ecirc;m v&agrave;o gi&#7887; h&agrave;ng</button>
+                   </div>
+                   <div class="product-card">
+                       <div class="product-card-img">
+                           <img src="mochi-10.jpeg" alt="Chocolate Fuwa">
+                       </div>
+                       <div class="product-card-info">
+                           <h3>Chocolate Fuwa</h3>
+                           <span class="product-dash"></span>
+                           <p class="product-price">50.000 VND</p>
+                       </div>
+                       <button class="add-to-cart-btn" onclick="addToCart('Chocolate Fuwa', 50000, 'mochi-10.jpeg', this)">Th&ecirc;m v&agrave;o gi&#7887; h&agrave;ng</button>
+                   </div>
+                   <div class="product-card">
+                       <div class="product-card-img">
+                           <img src="Image 20.jpeg" alt="Tropical Fuwa">
+                       </div>
+                       <div class="product-card-info">
+                           <h3>Tropical Fuwa</h3>
+                           <span class="product-dash"></span>
+                           <p class="product-price">55.000 VND</p>
+                       </div>
+                       <button class="add-to-cart-btn" onclick="addToCart('Tropical Fuwa', 55000, 'Image 20.jpeg', this)">Th&ecirc;m v&agrave;o gi&#7887; h&agrave;ng</button>
+                   </div>
+                   <div class="product-card">
+                       <div class="product-card-img">
+                           <img src="Image 17.jpeg" alt="Fuwa Pudding">
+                       </div>
+                       <div class="product-card-info">
+                           <h3>Fuwa Pudding</h3>
+                           <span class="product-dash"></span>
+                           <p class="product-price">48.000 VND</p>
+                       </div>
+                       <button class="add-to-cart-btn" onclick="addToCart('Fuwa Pudding', 48000, 'Image 17.jpeg', this)">Th&ecirc;m v&agrave;o gi&#7887; h&agrave;ng</button>
+                   </div>
+               </div>
+           </div>
+       </div>
 
        <!-- Category 1: Sắc (Fruit Mochi) -->
        <div class="menu-accordion">
