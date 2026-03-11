@@ -76,6 +76,32 @@ header.scrolled {
    text-decoration: none;
    text-transform: uppercase;
    transition: color 0.3s;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+.logo-flower {
+   width: 42px;
+   height: 42px;
+   border-radius: 50%;
+   object-fit: cover;
+   clip-path: polygon(50% 0%, 65% 15%, 100% 10%, 80% 40%, 95% 70%, 65% 65%, 50% 100%, 35% 65%, 5% 70%, 20% 40%, 0% 10%, 35% 15%);
+   transition: transform 0.4s ease;
+}
+.logo:hover .logo-flower {
+   transform: rotate(30deg) scale(1.1);
+}
+
+.footer-logo-flower {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   object-fit: cover;
+   clip-path: polygon(50% 0%, 65% 15%, 100% 10%, 80% 40%, 95% 70%, 65% 65%, 50% 100%, 35% 65%, 5% 70%, 20% 40%, 0% 10%, 35% 15%);
+   display: inline-block;
+   vertical-align: middle;
+   margin-right: 10px;
 }
 
 header.scrolled .logo {
