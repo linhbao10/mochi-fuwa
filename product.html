@@ -595,14 +595,23 @@
            }
        };
 
+       // ── Collections (for sidebar thumbnails) ─────────────────────────
+       const collections = {
+           'sac':     ['hong-sac','xich-sac','ngoc-sac','tu-sac'],
+           'nguyet':  ['luc-nguyet','hac-nguyet','nong-nguyet','ngoc-nguyet'],
+           'new':     ['matcha-rose','chocolate-fuwa'],
+           'duyen':   ['luc-duyen','tu-duyen','tram-duyen','ngoc-duyen','thai-mango','matcha-frappe']
+       };
+       const productCollection = {
+           'hong-sac':'sac','xich-sac':'sac','ngoc-sac':'sac','tu-sac':'sac',
+           'luc-nguyet':'nguyet','hac-nguyet':'nguyet','nong-nguyet':'nguyet','ngoc-nguyet':'nguyet',
+           'matcha-rose':'new','chocolate-fuwa':'new',
+           'luc-duyen':'duyen','tu-duyen':'duyen','tram-duyen':'duyen',
+           'ngoc-duyen':'duyen','thai-mango':'duyen','matcha-frappe':'duyen'
+       };
+
        // ── Helpers ───────────────────────────────────────────────────────
        function formatPrice(n) { return n.toLocaleString('vi-VN') + ' VND'; }
-
-       function switchImg(src, thumb) {
-           document.getElementById('mainImg').src = src;
-           document.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
-           thumb.classList.add('active');
-       }
 
        let qty = 1;
        function changeQty(delta) {
@@ -618,6 +627,7 @@
        }
 
        let currentProduct = null;
+       let currentId = null;
 
        function addToCartFromPage() {
            if (!currentProduct) return;
@@ -632,6 +642,13 @@
            setTimeout(() => { btn.textContent = 'Thêm vào giỏ hàng'; btn.classList.remove('added'); }, 2000);
        }
 
+       // ── Load product (updates URL + re-renders) ───────────────────────
+       function loadProduct(id) {
+           history.pushState(null, '', 'product.html?id=' + id);
+           renderProduct(id);
+           window.scrollTo({ top: 0, behavior: 'smooth' });
+       }
+
        // ── Render Product ────────────────────────────────────────────────
        function renderProduct(id) {
            const p = products[id];
@@ -640,17 +657,25 @@
                return;
            }
            currentProduct = p;
+           currentId = id;
+           qty = 1;
+           document.getElementById('qtyDisplay').textContent = 1;
 
            document.title = 'Mochi Fuwa | ' + p.name;
            document.getElementById('breadcrumbName').textContent = p.name;
            document.getElementById('mainImg').src = p.images[0];
            document.getElementById('mainImg').alt = p.name;
 
-           // Thumbs
+           // Sidebar thumbs = siblings in same collection
+           const colKey = productCollection[id];
+           const siblings = colKey ? collections[colKey] : [id];
            const thumbsEl = document.getElementById('thumbsContainer');
-           thumbsEl.innerHTML = p.images.map((img, i) =>
-               `<div class="product-thumb${i===0?' active':''}" onclick="switchImg('${img}', this)"><img src="${img}" alt="${p.name}"></div>`
-           ).join('');
+           thumbsEl.innerHTML = siblings.map(sid => {
+               const s = products[sid];
+               if (!s) return '';
+               const isActive = sid === id ? ' active' : '';
+               return `<div class="product-thumb${isActive}" onclick="loadProduct('${sid}')" title="${s.name}"><img src="${s.images[0]}" alt="${s.name}"></div>`;
+           }).join('');
 
            document.getElementById('productCategory').textContent = p.category;
            document.getElementById('productName').textContent = p.name;
@@ -658,32 +683,42 @@
            document.getElementById('productPrice').textContent = formatPrice(p.price);
            document.getElementById('productDesc').textContent = p.desc;
 
-           // Tags
            document.getElementById('productTags').innerHTML = p.tags.map(t => `<span class="tag">${t}</span>`).join('');
 
            document.getElementById('metaType').textContent = p.type;
            document.getElementById('metaFlavor').textContent = p.flavor;
            document.getElementById('metaStorage').textContent = p.storage;
 
-           // Tabs
+           // Reset tabs to first tab
+           document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+           document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+           document.getElementById('tab-desc').classList.add('active');
+           document.querySelector('.tab-btn').classList.add('active');
+
            document.getElementById('tabDesc').textContent = p.longDesc;
            document.getElementById('tabIngr').innerHTML = p.ingr.map(([label, val]) =>
                `<li><span>${label}</span><span>${val}</span></li>`).join('');
            document.getElementById('tabNutri').innerHTML = p.nutri.map(([label, val]) =>
                `<li><span>${label}</span><span>${val}</span></li>`).join('');
 
-           // Related
+           // Related products
            const relatedEl = document.getElementById('relatedGrid');
            relatedEl.innerHTML = p.related.map(rid => {
                const r = products[rid];
                if (!r) return '';
-               return `<a href="product.html?id=${rid}" class="related-card"><img src="${r.images[0]}" alt="${r.name}"><div class="related-card-info"><h4>${r.name}</h4><p>${formatPrice(r.price)}</p></div></a>`;
+               return `<a href="javascript:void(0)" onclick="loadProduct('${rid}')" class="related-card"><img src="${r.images[0]}" alt="${r.name}"><div class="related-card-info"><h4>${r.name}</h4><p>${formatPrice(r.price)}</p></div></a>`;
            }).join('');
        }
 
        // ── Init ──────────────────────────────────────────────────────────
        const id = new URLSearchParams(window.location.search).get('id') || 'hong-sac';
        renderProduct(id);
+
+       // Handle browser back/forward
+       window.addEventListener('popstate', () => {
+           const newId = new URLSearchParams(window.location.search).get('id') || 'hong-sac';
+           renderProduct(newId);
+       });
 
        // Menu
        const menuBtn = document.getElementById('mochiMenuBtn');
