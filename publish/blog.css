@@ -1,5 +1,4 @@
 @import url("style.css");
-
 .blog-banner {
     width: 100%;
     padding-top: 80px;
@@ -21,13 +20,11 @@
     color: #888;
     letter-spacing: 0.5px;
 }
-
 .blog-section {
     max-width: 1100px;
     margin: 0 auto;
     padding: 60px 24px 80px;
 }
-
 .featured-post {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -103,7 +100,6 @@
     background: #9F0031;
     color: #fff;
 }
-
 .blog-grid-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
@@ -189,7 +185,6 @@
     transition: opacity 0.2s;
 }
 .blog-card-footer a:hover { opacity: 0.7; }
-
 .newsletter-section {
     background: linear-gradient(135deg, #9F0031, #c0392b);
     border-radius: 1.5rem;
@@ -241,7 +236,6 @@
     transition: opacity 0.3s;
 }
 .newsletter-form button:hover { opacity: 0.85; }
-
 .blog-modal-overlay {
     display: none;
     position: fixed;
@@ -306,7 +300,6 @@
     line-height: 1.9;
 }
 .blog-modal .blog-modal-body p { margin-bottom: 16px; }
-
 @media (max-width: 992px) {
     .featured-post { grid-template-columns: 1fr; gap: 28px; }
     .featured-post-img img { height: 300px; }

@@ -9,7 +9,6 @@
    
 </head>
 <body>
-
    <header>
        <div class="header-content">
            <a href="index.html" class="logo"><img src="../assets/img/Gemini_Generated_Image_1439e1439e1439e1.jpeg" alt="Logo" class="logo-flower">MOCHI FUWA</a>
@@ -20,7 +19,6 @@
            </button>
        </div>
    </header>
-
    <div class="menu-overlay" id="menuOverlay">
        <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close menu">&times;</button>
        <nav class="menu-overlay-nav">
@@ -37,28 +35,23 @@
            <p>Mochi Fuwa</p>
        </div>
    </div>
-
    <div class="cart-page">
        <h1 class="cart-page-title" id="cartTitle">Giỏ Hàng</h1>
        <p class="cart-page-subtitle" id="cartSubtitle">Kiểm tra và đặt hàng sản phẩm của bạn</p>
-
        <a href="shop.html" class="back-to-shop">&larr; Tiếp tục mua sắm</a>
-
-       <!-- Cart Table Header -->
+       
        <div class="cart-table-header" id="cartTableHeader" style="display:none;">
            <span>Sản Phẩm</span>
            <span>Số Lượng</span>
            <span>Thành Tiền</span>
            <span></span>
        </div>
-
-       <!-- Cart Items -->
+       
        <div id="cartItemsList"></div>
-
-       <!-- Cart Layout (items + summary) -->
+       
        <div class="cart-layout" id="cartLayout" style="display:none;">
            <div>
-               <!-- Delivery info placeholder (empty left column since items are above) -->
+               
            </div>
            <div class="cart-summary-box">
                <h3>Tóm Tắt Đơn Hàng</h3>
@@ -74,7 +67,6 @@
                    <span>Tổng cộng</span>
                    <span id="totalAmt">0 VND</span>
                </div>
-
                <div class="checkout-section">
                    <h4>Thông Tin Giao Hàng</h4>
                    <div class="form-group">
@@ -97,22 +89,19 @@
                </div>
            </div>
        </div>
-
-       <!-- Empty State -->
+       
        <div class="cart-empty" id="cartEmpty">
            <div class="cart-empty-icon">🛒</div>
            <p>Giỏ hàng của bạn đang trống.<br>Hãy thêm sản phẩm yêu thích vào giỏ nhé!</p>
            <a href="shop.html">Khám Phá Shop</a>
        </div>
-
-       <!-- Success State -->
+       
        <div class="order-success" id="orderSuccess">
            <h2>Đặt Hàng Thành Công!</h2>
            <p>Cảm ơn bạn đã tin tưởng Mochi Fuwa.<br>Chúng tôi sẽ liên hệ bạn trong vòng 15 phút để xác nhận đơn hàng.</p>
            <a href="shop.html">Tiếp Tục Mua Sắm</a>
        </div>
    </div>
-
    <footer>
        <div class="footer-container">
            <div class="footer-brand">
@@ -136,23 +125,19 @@
            <p>copyright &copy; 2026. all rights reserved.</p>
        </div>
    </footer>
-
    <script src="../script/script.js"></script>
    <script>
        // Menu overlay
-
        // Cart rendering
        function formatPrice(num) {
            return num.toLocaleString('vi-VN') + ' VND';
        }
-
        function renderCart() {
            const cart = JSON.parse(localStorage.getItem('mochiCart') || '[]');
            const listEl = document.getElementById('cartItemsList');
            const layoutEl = document.getElementById('cartLayout');
            const emptyEl = document.getElementById('cartEmpty');
            const headerEl = document.getElementById('cartTableHeader');
-
            if (cart.length === 0) {
                listEl.innerHTML = '';
                layoutEl.style.display = 'none';
@@ -160,14 +145,11 @@
                emptyEl.style.display = 'block';
                return;
            }
-
            emptyEl.style.display = 'none';
            layoutEl.style.display = 'grid';
            headerEl.style.display = 'grid';
-
            let html = '';
            let subtotal = 0;
-
            cart.forEach((item, index) => {
                const lineTotal = item.price * item.qty;
                subtotal += lineTotal;
@@ -190,12 +172,10 @@
                    </div>
                `;
            });
-
            listEl.innerHTML = html;
            document.getElementById('subtotalAmt').textContent = formatPrice(subtotal);
            document.getElementById('totalAmt').textContent = formatPrice(subtotal);
        }
-
        function changeQty(index, delta) {
            let cart = JSON.parse(localStorage.getItem('mochiCart') || '[]');
            cart[index].qty += delta;
@@ -203,14 +183,12 @@
            localStorage.setItem('mochiCart', JSON.stringify(cart));
            renderCart();
        }
-
        function removeItem(index) {
            let cart = JSON.parse(localStorage.getItem('mochiCart') || '[]');
            cart.splice(index, 1);
            localStorage.setItem('mochiCart', JSON.stringify(cart));
            renderCart();
        }
-
        function placeOrder() {
            const name = document.getElementById('custName').value.trim();
            const phone = document.getElementById('custPhone').value.trim();
@@ -227,7 +205,6 @@
            document.querySelector('.back-to-shop').style.display = 'none';
            document.getElementById('orderSuccess').style.display = 'block';
        }
-
        renderCart();
    </script>
 </body>

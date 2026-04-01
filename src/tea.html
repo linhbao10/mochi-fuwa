@@ -18,11 +18,9 @@
            height: auto;
            display: block;
        }
-
        .menu-full {
            padding: 60px 0 80px;
        }
-
        /* Accordion Section */
        .menu-accordion {
            border-top: 1px dotted #9F0031;
@@ -33,7 +31,6 @@
        .menu-accordion:last-child {
            border-bottom: 1px dotted #9F0031;
        }
-
        .accordion-header {
            display: flex;
            justify-content: space-between;
@@ -65,7 +62,6 @@
            transition: transform 0.3s ease;
            line-height: 1;
        }
-
        .accordion-content {
            max-height: 0;
            overflow: hidden;
@@ -75,7 +71,6 @@
            max-height: 4000px;
            overflow: visible;
        }
-
        /* Horizontal Scroll Row */
        .product-row {
            display: flex;
@@ -101,7 +96,6 @@
            -ms-overflow-style: none;
            scrollbar-width: none;
        }
-
        .product-card {
            flex: 0 0 280px;
            border: 0.5px solid rgba(159, 0, 49, 0.7);
@@ -114,7 +108,6 @@
        .product-card:hover {
            transform: translateY(-4px);
        }
-
        .product-card-img {
            width: 100%;
            overflow: hidden;
@@ -126,7 +119,6 @@
            display: block;
            border-radius: 1.25rem 1.25rem 0 0;
        }
-
        .product-card-info {
            padding: 20px 16px 24px;
            text-align: center;
@@ -152,7 +144,6 @@
            font-weight: 500;
            margin: 0;
        }
-
        .add-to-cart-btn {
            display: block;
            width: calc(100% - 32px);
@@ -176,7 +167,6 @@
        .add-to-cart-btn.added {
            background: #4a8c5c;
        }
-
        /* Floating Cart */
        .floating-cart {
            position: fixed;
@@ -225,7 +215,6 @@
        .cart-count.show {
            opacity: 1;
        }
-
        /* New Arrivals Banner */
        .new-arrivals-banner {
            max-width: 1100px;
@@ -265,7 +254,6 @@
            0%, 100% { transform: scale(1); }
            50% { transform: scale(1.08); }
        }
-
        /* New Arrivals Accordion */
        .menu-accordion.new-arrivals {
            border-top: none;
@@ -297,7 +285,6 @@
            letter-spacing: 1.5px;
            z-index: 2;
        }
-
        /* Responsive */
        @media (max-width: 768px) {
            .accordion-header h2 {
@@ -327,7 +314,6 @@
    </style>
 </head>
 <body>
-
    <header>
        <div class="header-content">
            <a href="index.html" class="logo"><img src="../assets/img/Gemini_Generated_Image_1439e1439e1439e1.jpeg" alt="Logo" class="logo-flower">MOCHI FUWA</a>
@@ -338,7 +324,6 @@
            </button>
        </div>
    </header>
-
    <div class="menu-overlay" id="menuOverlay">
        <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close menu">&times;</button>
        <nav class="menu-overlay-nav">
@@ -355,24 +340,20 @@
            <p>Mochi Fuwa</p>
        </div>
    </div>
-
-   <!-- Page Banner -->
+   
    <div class="menu-banner">
        <img src="../assets/img/Gemini_Generated_Image_ys8su7ys8su7ys8s.jpeg" alt="Mochi Fuwa Menu">
    </div>
-
-   <!-- All Menu Items -->
+   
    <section class="menu-full">
-
-       <!-- New Arrivals Banner -->
+       
        <div class="new-arrivals-banner">
            <div class="new-arrivals-banner-inner">
                <span class="new-tag">NEW</span>
                <span>S&#7843;n ph&#7849;m m&#7899;i nh&#7845;t t&#7915; Mochi Fuwa &#8212; Kh&aacute;m ph&aacute; ngay!</span>
            </div>
        </div>
-
-       <!-- New Arrivals -->
+       
        <div class="menu-accordion new-arrivals">
            <div class="accordion-header" onclick="toggleAccordion(this)">
                <h2>New Arrivals</h2>
@@ -427,8 +408,7 @@
                </div>
            </div>
        </div>
-
-       <!-- Category 1: Sắc (Fruit Mochi) -->
+       
        <div class="menu-accordion">
            <div class="accordion-header" onclick="toggleAccordion(this)">
                <h2>Sắc</h2>
@@ -483,8 +463,7 @@
                </div>
            </div>
        </div>
-
-       <!-- Category 2: Nguyệt (Sweet Mochi) -->
+       
        <div class="menu-accordion">
            <div class="accordion-header" onclick="toggleAccordion(this)">
                <h2>Nguyệt</h2>
@@ -539,8 +518,7 @@
                </div>
            </div>
        </div>
-
-       <!-- Category 3: Duyên (Drinks) -->
+       
        <div class="menu-accordion">
            <div class="accordion-header" onclick="toggleAccordion(this)">
                <h2>Duyên</h2>
@@ -639,9 +617,7 @@
                </div>
            </div>
        </div>
-
    </section>
-
    <footer>
        <div class="footer-container">
            <div class="footer-brand">
@@ -665,38 +641,31 @@
            <p>copyright &copy; 2026. all rights reserved.</p>
        </div>
    </footer>
-
-   <!-- Floating Cart Button -->
+   
    <a href="cart.html" class="floating-cart" id="floatingCart">
        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
        <span class="cart-count" id="cartCount">0</span>
    </a>
-
    <script src="../script/script.js"></script>
    <script>
        // Menu overlay
-
        // Accordion toggle
        function toggleAccordion(header) {
            const content = header.nextElementSibling;
            const toggle = header.querySelector('.accordion-toggle');
            const isOpen = content.classList.contains('open');
-
            content.classList.toggle('open');
-
            if (isOpen) {
                toggle.textContent = '+';
            } else {
                toggle.textContent = '-';
            }
        }
-
        // Set initial state: all sections open
        document.querySelectorAll('.accordion-content.open').forEach(content => {
            const toggle = content.previousElementSibling.querySelector('.accordion-toggle');
            toggle.textContent = '-';
        });
-
        // Cart functionality
        function addToCart(name, price, image, btn) {
            let cart = JSON.parse(localStorage.getItem('mochiCart') || '[]');
@@ -708,7 +677,6 @@
            }
            localStorage.setItem('mochiCart', JSON.stringify(cart));
            updateCartCount();
-
            btn.textContent = 'Đã thêm!';
            btn.classList.add('added');
            setTimeout(() => {
@@ -716,7 +684,6 @@
                btn.classList.remove('added');
            }, 1200);
        }
-
        function updateCartCount() {
            const cart = JSON.parse(localStorage.getItem('mochiCart') || '[]');
            const total = cart.reduce((sum, item) => sum + item.qty, 0);
@@ -728,15 +695,12 @@
                countEl.classList.remove('show');
            }
        }
-
        updateCartCount();
-
        // Drag to scroll for product rows
        document.querySelectorAll('.product-row').forEach(row => {
            let isDown = false;
            let startX;
            let scrollLeft;
-
            row.addEventListener('mousedown', (e) => {
                isDown = true;
                startX = e.pageX - row.offsetLeft;

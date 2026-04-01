@@ -24,7 +24,6 @@
        .breadcrumb a { color: #aaa; text-decoration: none; transition: color 0.2s; }
        .breadcrumb a:hover { color: #9F0031; }
        .breadcrumb span { color: #9F0031; }
-
        .product-main {
            display: grid;
            grid-template-columns: 1fr 1fr;
@@ -61,7 +60,6 @@
        }
        .product-thumb.active { border-color: #9F0031; }
        .product-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
        .product-category-tag {
            display: inline-block;
            font-family: 'Quicksand', sans-serif;
@@ -187,7 +185,6 @@
        .meta-row { display: flex; gap: 12px; margin-bottom: 10px; font-family: 'Quicksand', sans-serif; font-size: 0.88rem; }
        .meta-label { color: #aaa; min-width: 100px; font-weight: 500; }
        .meta-value { color: #555; font-weight: 600; }
-
        .product-details { border-top: 1px solid rgba(159,0,49,0.15); padding-top: 40px; margin-bottom: 60px; }
        .details-tabs { display: flex; gap: 0; border-bottom: 1px solid rgba(159,0,49,0.2); margin-bottom: 28px; }
        .tab-btn {
@@ -220,7 +217,6 @@
        .tab-content ul li:last-child { border-bottom: none; }
        .tab-content ul li span:first-child { color: #888; font-weight: 500; }
        .tab-content ul li span:last-child { color: #333; font-weight: 600; }
-
        .related-section h2 {
            font-family: 'Cormorant Garamond', serif;
            font-size: 2rem;
@@ -245,7 +241,6 @@
        .related-card-info { padding: 14px; text-align: center; }
        .related-card-info h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: #9F0031; margin: 0 0 4px; }
        .related-card-info p { font-family: 'Quicksand', sans-serif; font-size: 0.85rem; color: #9F0031; margin: 0; font-weight: 500; }
-
        @media (max-width: 992px) {
            .product-main { grid-template-columns: 1fr; gap: 32px; }
            .product-gallery { position: static; }
@@ -266,7 +261,6 @@
    </style>
 </head>
 <body>
-
    <header>
        <div class="header-content">
            <a href="index.html" class="logo"><img src="../assets/img/Gemini_Generated_Image_1439e1439e1439e1.jpeg" alt="Logo" class="logo-flower">MOCHI FUWA</a>
@@ -277,7 +271,6 @@
            </button>
        </div>
    </header>
-
    <div class="menu-overlay" id="menuOverlay">
        <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close menu">&times;</button>
        <nav class="menu-overlay-nav">
@@ -292,14 +285,12 @@
        </nav>
        <div class="menu-overlay-footer"><p>Mochi Fuwa</p></div>
    </div>
-
    <div class="product-page">
        <div class="breadcrumb">
            <a href="index.html">Home</a> &nbsp;/&nbsp;
            <a href="shop.html">Shop</a> &nbsp;/&nbsp;
            <span id="breadcrumbName">Chi Tiết</span>
        </div>
-
        <div class="product-main">
            <div class="product-gallery">
                <div class="product-main-img">
@@ -307,7 +298,6 @@
                </div>
                <div class="product-thumbs" id="thumbsContainer"></div>
            </div>
-
            <div class="product-info">
                <span class="product-category-tag" id="productCategory"></span>
                <h1 id="productName"></h1>
@@ -316,7 +306,6 @@
                <div class="product-divider"></div>
                <p class="product-description" id="productDesc"></p>
                <div class="product-tags" id="productTags"></div>
-
                <div class="product-qty-row">
                    <div class="qty-control">
                        <button onclick="changeQty(-1)">&#8722;</button>
@@ -326,7 +315,6 @@
                    <button class="add-to-cart-main" id="addBtn" onclick="addToCartFromPage()">Thêm vào giỏ hàng</button>
                </div>
                <a href="cart.html" class="view-cart-btn">Xem Giỏ Hàng</a>
-
                <div class="product-meta">
                    <div class="meta-row"><span class="meta-label">Loại</span><span class="meta-value" id="metaType"></span></div>
                    <div class="meta-row"><span class="meta-label">Hương vị</span><span class="meta-value" id="metaFlavor"></span></div>
@@ -335,7 +323,6 @@
                </div>
            </div>
        </div>
-
        <div class="product-details">
            <div class="details-tabs">
                <button class="tab-btn active" onclick="switchTab('desc', this)">Mô Tả</button>
@@ -352,14 +339,12 @@
                <ul id="tabNutri"></ul>
            </div>
        </div>
-
        <div class="related-section">
            <h2>Sản Phẩm Liên Quan</h2>
            <div class="title-underline"></div>
            <div class="related-grid" id="relatedGrid"></div>
        </div>
    </div>
-
    <footer>
        <div class="footer-container">
            <div class="footer-brand">
@@ -381,7 +366,6 @@
        </div>
        <div class="footer-copyright"><p>copyright &copy; 2026. all rights reserved.</p></div>
    </footer>
-
    <script src="../script/script.js"></script>
    <script>
        // ── Product Database ──────────────────────────────────────────────
@@ -595,7 +579,6 @@
                related: ['luc-duyen','tram-duyen','thai-mango','tu-duyen']
            }
        };
-
        // ── Collections (for sidebar thumbnails) ─────────────────────────
        const collections = {
            'sac':     ['hong-sac','xich-sac','ngoc-sac','tu-sac'],
@@ -610,26 +593,21 @@
            'luc-duyen':'duyen','tu-duyen':'duyen','tram-duyen':'duyen',
            'ngoc-duyen':'duyen','thai-mango':'duyen','matcha-frappe':'duyen'
        };
-
        // ── Helpers ───────────────────────────────────────────────────────
        function formatPrice(n) { return n.toLocaleString('vi-VN') + ' VND'; }
-
        let qty = 1;
        function changeQty(delta) {
            qty = Math.max(1, qty + delta);
            document.getElementById('qtyDisplay').textContent = qty;
        }
-
        function switchTab(id, btn) {
            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
            document.getElementById('tab-' + id).classList.add('active');
            btn.classList.add('active');
        }
-
        let currentProduct = null;
        let currentId = null;
-
        function addToCartFromPage() {
            if (!currentProduct) return;
            let cart = JSON.parse(localStorage.getItem('mochiCart') || '[]');
@@ -642,26 +620,22 @@
            btn.classList.add('added');
            setTimeout(() => { btn.textContent = 'Thêm vào giỏ hàng'; btn.classList.remove('added'); }, 2000);
        }
-
        // ── Load & render a product ───────────────────────────────────────
        function loadProduct(pid) {
            history.pushState(null, '', 'product.html?id=' + pid);
            renderProduct(pid);
            window.scrollTo({ top: 0, behavior: 'smooth' });
        }
-
        function renderProduct(pid) {
            const p = products[pid];
            if (!p) return;
            currentProduct = p;
            qty = 1;
            document.getElementById('qtyDisplay').textContent = 1;
-
            document.title = 'Mochi Fuwa | ' + p.name;
            document.getElementById('breadcrumbName').textContent = p.name;
            document.getElementById('mainImg').src = p.images[0];
            document.getElementById('mainImg').alt = p.name;
-
            // Sidebar thumbs — all products in same collection
            const colKey = productCollection[pid];
            const siblings = colKey ? collections[colKey] : [pid];
@@ -672,7 +646,6 @@
                const active = sid === pid ? ' active' : '';
                return '<div class="product-thumb' + active + '" data-pid="' + sid + '" title="' + s.name + '"><img src="' + s.images[0] + '" alt="' + s.name + '"></div>';
            }).join('');
-
            document.getElementById('productCategory').textContent = p.category;
            document.getElementById('productName').textContent = p.name;
            document.getElementById('productSubtitle').textContent = p.subtitle;
@@ -682,13 +655,11 @@
            document.getElementById('metaType').textContent = p.type;
            document.getElementById('metaFlavor').textContent = p.flavor;
            document.getElementById('metaStorage').textContent = p.storage;
-
            // Reset to first tab
            document.querySelectorAll('.tab-content').forEach(function(t) { t.classList.remove('active'); });
            document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
            document.getElementById('tab-desc').classList.add('active');
            document.querySelectorAll('.tab-btn')[0].classList.add('active');
-
            document.getElementById('tabDesc').textContent = p.longDesc;
            document.getElementById('tabIngr').innerHTML = p.ingr.map(function(row) {
                return '<li><span>' + row[0] + '</span><span>' + row[1] + '</span></li>';
@@ -696,7 +667,6 @@
            document.getElementById('tabNutri').innerHTML = p.nutri.map(function(row) {
                return '<li><span>' + row[0] + '</span><span>' + row[1] + '</span></li>';
            }).join('');
-
            // Related products
            document.getElementById('relatedGrid').innerHTML = p.related.map(function(rid) {
                const r = products[rid];
@@ -704,27 +674,22 @@
                return '<div class="related-card" data-pid="' + rid + '" style="cursor:pointer"><img src="' + r.images[0] + '" alt="' + r.name + '"><div class="related-card-info"><h4>' + r.name + '</h4><p>' + formatPrice(r.price) + '</p></div></div>';
            }).join('');
        }
-
        // ── Event delegation for thumbs & related cards ───────────────────
        document.getElementById('thumbsContainer').addEventListener('click', function(e) {
            const thumb = e.target.closest('[data-pid]');
            if (thumb) loadProduct(thumb.dataset.pid);
        });
-
        document.getElementById('relatedGrid').addEventListener('click', function(e) {
            const card = e.target.closest('[data-pid]');
            if (card) loadProduct(card.dataset.pid);
        });
-
        // ── Init ──────────────────────────────────────────────────────────
        const initId = new URLSearchParams(window.location.search).get('id') || 'hong-sac';
        renderProduct(initId);
-
        window.addEventListener('popstate', function() {
            const pid = new URLSearchParams(window.location.search).get('id') || 'hong-sac';
            renderProduct(pid);
        });
-
        // Menu
    </script>
 </body>

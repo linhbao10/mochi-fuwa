@@ -1,46 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Quicksand:wght@300;400;500;600;700&display=swap');
-
-/* --- BIẾN MÀU SẮC (THEME) --- */
 :root {
-   --primary-red: #a31d37;  /* Đỏ rượu Soko */
-   --soft-pink: #fdf0f2;    /* Hồng nền nhạt */
-   --accent-orange: #f36f21;/* Cam điểm nhấn */
+   --primary-red: #a31d37;  
+   --soft-pink: #fdf0f2;    
+   --accent-orange: #f36f21;
    --text-dark: #333;
    --white: #ffffff;
 }
-
-
-/* --- CUSTOM HEART CURSOR --- */
 html, body, * {
    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='h' x1='0' y1='0' x2='0.5' y2='1'%3E%3Cstop offset='0%25' stop-color='%23f8c8d4'/%3E%3Cstop offset='100%25' stop-color='%23e8a0b4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='url(%23h)' stroke='%23a31d37' stroke-width='0.8'/%3E%3Cellipse cx='8' cy='8' rx='2.5' ry='1.5' fill='white' opacity='0.3' transform='rotate(-30 8 8)'/%3E%3C/svg%3E") 19 19, auto;
 }
-
 a, button, .btn-cart, .mochi-menu-btn, .menu-link, input[type="submit"],
 a:hover, button:hover, .btn-cart:hover {
    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='h' x1='0' y1='0' x2='0.5' y2='1'%3E%3Cstop offset='0%25' stop-color='%23e84080'/%3E%3Cstop offset='100%25' stop-color='%23a31d37'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='url(%23h)' stroke='%23801328' stroke-width='0.8'/%3E%3Cellipse cx='8' cy='8' rx='2.5' ry='1.5' fill='white' opacity='0.35' transform='rotate(-30 8 8)'/%3E%3C/svg%3E") 22 22, pointer;
 }
-
-/* --- RESET & BASE --- */
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
 }
-
-
 body {
    font-family: 'Quicksand', sans-serif;
    color: var(--text-dark);
    background-color: var(--white);
    overflow-x: hidden;
 }
-
-
 a { text-decoration: none; }
 ul { list-style: none; }
-
-
-/* --- 1. HEADER & MOCHI MENU BUTTON --- */
 header {
    position: fixed;
    top: 0;
@@ -51,12 +36,10 @@ header {
    z-index: 1000;
    transition: background 0.3s, box-shadow 0.3s;
 }
-
 header.scrolled {
    background: rgba(255, 255, 255, 0.95);
    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
 }
-
 .header-content {
    max-width: 1200px;
    margin: 0 auto;
@@ -66,7 +49,6 @@ header.scrolled {
    align-items: center;
    padding: 0 20px;
 }
-
 .logo {
    font-family: 'Cormorant Garamond', serif;
    font-size: 1.8rem;
@@ -80,7 +62,6 @@ header.scrolled {
    align-items: center;
    gap: 10px;
 }
-
 .logo-flower {
    width: 62px;
    height: 62px;
@@ -92,7 +73,6 @@ header.scrolled {
 .logo:hover .logo-flower {
    transform: scale(1.1);
 }
-
 .footer-logo-flower {
    width: 68px;
    height: 68px;
@@ -103,12 +83,9 @@ header.scrolled {
    vertical-align: middle;
    margin-right: 10px;
 }
-
 header.scrolled .logo {
    color: var(--primary-red);
 }
-
-/* Mochi-shaped menu button */
 .mochi-menu-btn {
    width: 90px;
    height: 78px;
@@ -129,12 +106,10 @@ header.scrolled .logo {
    right: 25px;
    z-index: 1002;
 }
-
 .mochi-menu-btn:hover {
    transform: scale(1.1) rotate(-5deg);
    box-shadow: 0 6px 20px rgba(163, 29, 55, 0.4);
 }
-
 .mochi-menu-line {
    display: block;
    width: 36px;
@@ -143,8 +118,6 @@ header.scrolled .logo {
    border-radius: 2px;
    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
-
-/* Lines animate to X when active */
 .mochi-menu-btn.active .mochi-menu-line:nth-child(1) {
    transform: translateY(7.5px) rotate(45deg);
 }
@@ -155,7 +128,6 @@ header.scrolled .logo {
 .mochi-menu-btn.active .mochi-menu-line:nth-child(3) {
    transform: translateY(-7.5px) rotate(-45deg);
 }
-
 .mochi-menu-btn.active {
    background: var(--soft-pink);
    border-radius: 50%;
@@ -163,8 +135,6 @@ header.scrolled .logo {
 .mochi-menu-btn.active .mochi-menu-line {
    background: var(--primary-red);
 }
-
-/* --- FULLSCREEN MENU OVERLAY --- */
 .menu-overlay {
    position: fixed;
    top: 0;
@@ -182,13 +152,11 @@ header.scrolled .logo {
    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
    transform: scale(0.95);
 }
-
 .menu-overlay.active {
    opacity: 1;
    visibility: visible;
    transform: scale(1);
 }
-
 .menu-close-btn {
    position: absolute;
    top: 25px;
@@ -201,32 +169,26 @@ header.scrolled .logo {
    transition: transform 0.3s;
    line-height: 1;
 }
-
 .menu-close-btn:hover {
    transform: rotate(90deg) scale(1.2);
 }
-
 .menu-overlay-nav ul {
    list-style: none;
    text-align: center;
 }
-
 .menu-overlay-nav li {
    opacity: 0;
    transform: translateY(30px);
    transition: all 0.4s ease;
 }
-
 .menu-overlay.active .menu-overlay-nav li {
    opacity: 1;
    transform: translateY(0);
 }
-
 .menu-overlay.active .menu-overlay-nav li:nth-child(1) { transition-delay: 0.1s; }
 .menu-overlay.active .menu-overlay-nav li:nth-child(2) { transition-delay: 0.2s; }
 .menu-overlay.active .menu-overlay-nav li:nth-child(3) { transition-delay: 0.3s; }
 .menu-overlay.active .menu-overlay-nav li:nth-child(4) { transition-delay: 0.4s; }
-
 .menu-overlay-nav a {
    display: inline-block;
    color: var(--white);
@@ -238,13 +200,11 @@ header.scrolled .logo {
    transition: all 0.3s;
    position: relative;
 }
-
 .menu-overlay-nav a:hover {
    color: var(--soft-pink);
    transform: translateX(15px);
    letter-spacing: 5px;
 }
-
 .menu-overlay-footer {
    position: absolute;
    bottom: 40px;
@@ -253,9 +213,6 @@ header.scrolled .logo {
    font-size: 1rem;
    letter-spacing: 3px;
 }
-
-
-/* --- 2. HERO SECTION (VIDEO) --- */
 .hero {
    position: relative;
    height: 100vh;
@@ -267,7 +224,6 @@ header.scrolled .logo {
    margin-top: 0;
    overflow: hidden;
 }
-
 .hero-video {
    position: absolute;
    top: 0;
@@ -277,7 +233,6 @@ header.scrolled .logo {
    object-fit: cover;
    z-index: 0;
 }
-
 .hero-overlay {
    position: absolute;
    top: 0;
@@ -287,12 +242,10 @@ header.scrolled .logo {
    background: rgba(0, 0, 0, 0.4);
    z-index: 1;
 }
-
 .hero-content {
    position: relative;
    z-index: 2;
 }
-
 .hero h1 {
    font-family: 'Cormorant Garamond', serif;
    font-size: 4.5rem;
@@ -300,7 +253,6 @@ header.scrolled .logo {
    margin-bottom: 20px;
    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
-
 .hero p {
    font-family: 'Cormorant Garamond', serif;
    font-size: 1.5rem;
@@ -311,7 +263,6 @@ header.scrolled .logo {
    text-shadow: 0 1px 10px rgba(0,0,0,0.3);
    letter-spacing: 1.5px;
 }
-
 .cta-btn {
    padding: 15px 40px;
    background: var(--primary-red);
@@ -323,21 +274,16 @@ header.scrolled .logo {
    letter-spacing: 1px;
 }
 .cta-btn:hover { background: #801328; }
-
-
-/* --- MARQUEE BAR --- */
 .marquee-bar {
    background: var(--primary-red);
    overflow: hidden;
    white-space: nowrap;
    padding: 18px 0;
 }
-
 .marquee-track {
    display: inline-flex;
    animation: marquee-scroll 15s linear infinite;
 }
-
 .marquee-track span {
    font-family: 'Cormorant Garamond', serif;
    font-size: 2.5rem;
@@ -346,19 +292,14 @@ header.scrolled .logo {
    letter-spacing: 3px;
    padding-right: 0;
 }
-
 @keyframes marquee-scroll {
    0% { transform: translateX(0); }
    100% { transform: translateX(-50%); }
 }
-
-
-/* --- ABOUT SECTION --- */
 .about {
    padding: 100px 10%;
    background: var(--soft-pink);
 }
-
 .about-container {
    display: grid;
    grid-template-columns: 1fr 1fr;
@@ -367,17 +308,14 @@ header.scrolled .logo {
    margin: 0 auto;
    align-items: center;
 }
-
 .about-image {
    position: relative;
 }
-
 .about-image img {
    width: 100%;
    border-radius: 20px;
    box-shadow: 0 15px 40px rgba(163, 29, 55, 0.15);
 }
-
 .about-deco {
    position: absolute;
    border-radius: 50%;
@@ -385,14 +323,12 @@ header.scrolled .logo {
    opacity: 0.15;
    animation: deco-float 5s ease-in-out infinite;
 }
-
 .deco-1 {
    width: 80px;
    height: 80px;
    top: -20px;
    right: -20px;
 }
-
 .deco-2 {
    width: 50px;
    height: 50px;
@@ -400,60 +336,48 @@ header.scrolled .logo {
    left: -15px;
    animation-delay: 2s;
 }
-
 @keyframes deco-float {
    0%, 100% { transform: translateY(0) scale(1); }
    50% { transform: translateY(-15px) scale(1.1); }
 }
-
 .about-text h2 {
    font-family: 'Cormorant Garamond', serif;
    color: var(--primary-red);
    font-size: 2.5rem;
    margin-bottom: 10px;
 }
-
 .about-text p {
    font-size: 1.05rem;
    line-height: 1.8;
    margin-bottom: 18px;
    color: #555;
 }
-
-/* Cute fade-in animations */
 .bounce-in {
    opacity: 0;
    transform: scale(0.8);
    animation: bounce-in 0.8s ease forwards;
    animation-delay: 0.2s;
 }
-
 @keyframes bounce-in {
    0% { opacity: 0; transform: scale(0.8); }
    60% { opacity: 1; transform: scale(1.05); }
    100% { opacity: 1; transform: scale(1); }
 }
-
 .fade-in-right {
    opacity: 0;
    transform: translateX(40px);
    animation: fade-in-right 0.8s ease forwards;
    animation-delay: 0.5s;
 }
-
 @keyframes fade-in-right {
    to { opacity: 1; transform: translateX(0); }
 }
-
 @media (max-width: 768px) {
    .about-container {
        grid-template-columns: 1fr;
        gap: 30px;
    }
 }
-
-
-/* --- ABOUT LABEL FRAME (Soko-style) --- */
 .about-label-section {
    padding: 100px 5%;
    background-color: #e8a0b4;
@@ -470,7 +394,6 @@ header.scrolled .logo {
    position: relative;
    overflow: hidden;
 }
-
 .about-label-frame {
    position: relative;
    max-width: 750px;
@@ -481,7 +404,6 @@ header.scrolled .logo {
    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
    border: 3px solid rgba(163, 29, 55, 0.15);
 }
-
 .about-label-frame::before {
    content: '';
    position: absolute;
@@ -497,7 +419,6 @@ header.scrolled .logo {
    border-bottom: 3px solid rgba(163, 29, 55, 0.15);
    z-index: 1;
 }
-
 .about-label-frame::after {
    content: '';
    position: absolute;
@@ -512,11 +433,9 @@ header.scrolled .logo {
    border-right: 3px solid rgba(163, 29, 55, 0.15);
    border-top: 3px solid rgba(163, 29, 55, 0.15);
 }
-
 .about-label-content {
    text-align: center;
 }
-
 .about-label-content p {
    font-family: 'Cormorant Garamond', serif;
    font-size: 1.05rem;
@@ -524,19 +443,15 @@ header.scrolled .logo {
    color: #555;
    margin-bottom: 16px;
 }
-
 .about-label-content p:last-child {
    margin-bottom: 0;
 }
-
 .about-label-content strong {
    color: #9F0031;
 }
-
 .about-label-content em {
    color: #9F0031;
 }
-
 .about-label-badge {
    position: absolute;
    top: -8px;
@@ -550,7 +465,6 @@ header.scrolled .logo {
    transform: rotate(8deg);
    z-index: 2;
 }
-
 .badge-brand {
    display: block;
    font-family: 'Cormorant Garamond', serif;
@@ -560,7 +474,6 @@ header.scrolled .logo {
    text-transform: uppercase;
    opacity: 0.6;
 }
-
 .badge-tagline {
    display: block;
    font-family: 'Cormorant Garamond', serif;
@@ -570,7 +483,6 @@ header.scrolled .logo {
    margin-top: 2px;
    font-style: italic;
 }
-
 @media (max-width: 768px) {
    .about-label-section {
        padding: 60px 5%;
@@ -588,10 +500,6 @@ header.scrolled .logo {
        top: -12px;
    }
 }
-
-
-/* --- 3. SHOWCASE (FLOATING) --- */
-/* --- FLAVOR MARQUEE BAR --- */
 .marquee-flavor {
    background: rgba(255, 255, 255, 0.25);
    backdrop-filter: blur(12px);
@@ -602,12 +510,10 @@ header.scrolled .logo {
    border-top: 1px solid rgba(163, 29, 55, 0.1);
    border-bottom: 1px solid rgba(163, 29, 55, 0.1);
 }
-
 .marquee-flavor-track {
    display: inline-flex;
    animation: marquee-flavor-scroll 20s linear infinite;
 }
-
 .marquee-flavor-track span {
    font-family: 'Cormorant Garamond', serif;
    font-size: 2rem;
@@ -616,24 +522,20 @@ header.scrolled .logo {
    letter-spacing: 4px;
    padding-right: 0;
 }
-
 @keyframes marquee-flavor-scroll {
    0% { transform: translateX(0); }
    100% { transform: translateX(-50%); }
 }
-
 .marquee-campaign {
    background: #9F0031;
    overflow: hidden;
    white-space: nowrap;
    padding: 18px 0;
 }
-
 .marquee-campaign-track {
    display: inline-flex;
    animation: marquee-campaign-scroll 18s linear infinite;
 }
-
 .marquee-campaign-track span {
    font-family: 'Cormorant Garamond', serif;
    font-size: 1.8rem;
@@ -642,26 +544,21 @@ header.scrolled .logo {
    letter-spacing: 5px;
    text-transform: uppercase;
 }
-
 @keyframes marquee-campaign-scroll {
    0% { transform: translateX(0); }
    100% { transform: translateX(-50%); }
 }
-
-/* --- CAMPAIGN SOKO-STYLE LAYOUT --- */
 .campaign-hero {
    position: relative;
    width: 100%;
    height: 55vh;
    overflow: hidden;
 }
-
 .campaign-hero img {
    width: 100%;
    height: 100%;
    object-fit: cover;
 }
-
 .campaign-hero-overlay {
    position: absolute;
    bottom: 30px;
@@ -671,7 +568,6 @@ header.scrolled .logo {
    padding: 20px 30px;
    border-radius: 12px;
 }
-
 .campaign-hero-overlay h2 {
    font-family: 'Cormorant Garamond', serif;
    font-size: 2.2rem;
@@ -680,31 +576,26 @@ header.scrolled .logo {
    color: #fff;
    letter-spacing: 2px;
 }
-
 .campaigns-tight {
    padding: 0 !important;
    background: none !important;
 }
-
 .campaigns-grid-tight {
    display: grid;
    grid-template-columns: 1fr 1fr;
    gap: 0;
 }
-
 .campaign-block {
    position: relative;
    overflow: hidden;
    aspect-ratio: 1;
 }
-
 .campaign-block img {
    width: 100%;
    height: 100%;
    object-fit: cover;
    display: block;
 }
-
 .campaign-block-info {
    position: absolute;
    bottom: 0;
@@ -714,7 +605,6 @@ header.scrolled .logo {
    background: linear-gradient(transparent, rgba(0,0,0,0.7));
    color: #fff;
 }
-
 .campaign-block-info h3 {
    font-family: 'Cormorant Garamond', serif;
    font-size: 1.6rem;
@@ -723,14 +613,11 @@ header.scrolled .logo {
    line-height: 1.2;
    margin-bottom: 5px;
 }
-
 .campaign-block-info span {
    font-family: 'Quicksand', sans-serif;
    font-size: 0.85rem;
    color: rgba(255,255,255,0.8);
 }
-
-/* --- 4. MOCHI BOX INTERACTIVE SECTION --- */
 .mochi-box-section {
    padding: 80px 5%;
    background-color: var(--soft-pink);
@@ -755,7 +642,6 @@ header.scrolled .logo {
    margin-bottom: 60px;
    font-style: italic;
 }
-
 .mochi-box-wrapper {
    display: flex;
    align-items: center;
@@ -765,7 +651,6 @@ header.scrolled .logo {
    margin: 0 auto;
    flex-wrap: wrap;
 }
-
 .mochi-shape-video {
    width: 380px;
    height: auto;
@@ -774,13 +659,11 @@ header.scrolled .logo {
    box-shadow: 0 10px 40px rgba(163, 29, 55, 0.15);
    flex-shrink: 0;
 }
-
 .mochi-shape-video video {
    width: 100%;
    height: auto;
    display: block;
 }
-
 .mochi-box-scene {
    width: 300px;
    height: 300px;
@@ -788,11 +671,9 @@ header.scrolled .logo {
    cursor: grab;
    filter: drop-shadow(0 20px 40px rgba(159, 0, 49, 0.2));
 }
-
 .mochi-box-scene:active {
    cursor: grabbing;
 }
-
 .mochi-box {
    width: 100%;
    height: 100%;
@@ -801,11 +682,9 @@ header.scrolled .logo {
    transform: rotateX(-20deg) rotateY(-30deg);
    transition: transform 0.1s ease-out;
 }
-
 .mochi-box.auto-rotate {
    animation: boxAutoRotate 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
-
 @keyframes boxAutoRotate {
    0% { transform: rotateX(-20deg) rotateY(0deg); }
    25% { transform: rotateX(-18deg) rotateY(-90deg); }
@@ -813,7 +692,6 @@ header.scrolled .logo {
    75% { transform: rotateX(-18deg) rotateY(-270deg); }
    100% { transform: rotateX(-20deg) rotateY(-360deg); }
 }
-
 .mochi-box-face {
    position: absolute;
    width: 300px;
@@ -830,8 +708,6 @@ header.scrolled .logo {
    text-align: center;
    overflow: hidden;
 }
-
-/* Decorative corner elements for each face */
 .mochi-box-face::before {
    content: '';
    position: absolute;
@@ -843,7 +719,6 @@ header.scrolled .logo {
    border-radius: 14px;
    pointer-events: none;
 }
-
 .mochi-box-face.front {
    background: linear-gradient(160deg, #fff0f5 0%, #ffd6e7 40%, #ffb6d3 100%);
    transform: translateZ(150px);
@@ -873,12 +748,10 @@ header.scrolled .logo {
    background: linear-gradient(160deg, #9F0031 0%, #7a0025 50%, #5a001a 100%);
    transform: rotateX(-90deg) translateZ(150px);
 }
-
 .box-face-icon {
    font-size: 2.5rem;
    margin-bottom: 12px;
 }
-
 .mochi-box-face h4 {
    font-family: 'Cormorant Garamond', serif;
    font-size: 1.4rem;
@@ -887,14 +760,12 @@ header.scrolled .logo {
    margin-bottom: 10px;
    letter-spacing: 1px;
 }
-
 .mochi-box-face p {
    font-size: 0.82rem;
    color: #666;
    line-height: 1.5;
    font-family: 'Quicksand', sans-serif;
 }
-
 .box-lid-text {
    font-family: 'Cormorant Garamond', serif;
    font-size: 2.2rem;
@@ -904,8 +775,6 @@ header.scrolled .logo {
    line-height: 1.3;
    text-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
-
-/* Decorative dot pattern on top face */
 .mochi-box-face.top::before {
    border: none;
    background: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
@@ -913,15 +782,12 @@ header.scrolled .logo {
    top: 0; left: 0; right: 0; bottom: 0;
    border-radius: 20px;
 }
-
-/* Hello Kitty Mochi floating on top of 3D box */
 .mochi-box-container {
    position: relative;
    display: flex;
    flex-direction: column;
    align-items: center;
 }
-
 .mochi-on-top {
    width: 160px;
    height: auto;
@@ -931,13 +797,10 @@ header.scrolled .logo {
    mix-blend-mode: screen;
    animation: mochiFloat 3s ease-in-out infinite;
 }
-
 @keyframes mochiFloat {
    0%, 100% { transform: translateY(0); }
    50% { transform: translateY(-12px); }
 }
-
-/* Reason cards */
 .mochi-box-reasons {
    display: flex;
    flex-direction: column;
@@ -945,7 +808,6 @@ header.scrolled .logo {
    max-width: 380px;
    width: 100%;
 }
-
 .reason-card {
    background: #fff;
    border-radius: 14px;
@@ -957,14 +819,12 @@ header.scrolled .logo {
    transition: all 0.4s ease;
    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
-
 .reason-card.active {
    opacity: 1;
    transform: translateX(0);
    border-color: var(--primary-red);
    box-shadow: 0 8px 25px rgba(163, 29, 55, 0.12);
 }
-
 .reason-num {
    font-family: 'Cormorant Garamond', serif;
    font-size: 1.8rem;
@@ -972,7 +832,6 @@ header.scrolled .logo {
    color: var(--primary-red);
    line-height: 1;
 }
-
 .reason-card h4 {
    font-family: 'Cormorant Garamond', serif;
    font-size: 1.2rem;
@@ -980,28 +839,21 @@ header.scrolled .logo {
    color: var(--primary-red);
    margin: 4px 0 6px;
 }
-
 .reason-card p {
    font-size: 0.88rem;
    color: #666;
    line-height: 1.5;
 }
-
-
-/* --- 5. PRODUCTS SECTION WITH CATEGORIES --- */
 .products {
    padding: 80px 5%;
    background: #FDF6EE;
    text-align: center;
 }
-
-/* Category accordion */
 .menu-category {
    max-width: 1200px;
    margin: 0 auto 10px;
    text-align: left;
 }
-
 .category-toggle {
    width: 100%;
    display: flex;
@@ -1014,36 +866,30 @@ header.scrolled .logo {
    cursor: pointer;
    transition: all 0.3s;
 }
-
 .category-toggle:hover {
    background: #f8dce0;
 }
-
 .category-toggle.active {
    background: var(--primary-red);
    border-radius: 12px 12px 0 0;
 }
-
 .category-toggle.active .cat-name,
 .category-toggle.active .cat-desc,
 .category-toggle.active .cat-icon {
    color: var(--white);
 }
-
 .cat-name {
    font-family: 'Cormorant Garamond', serif;
    font-size: 2rem;
    font-weight: 400;
    color: var(--primary-red);
 }
-
 .cat-desc {
    font-size: 0.95rem;
    color: #888;
    flex: 1;
    padding: 0 30px;
 }
-
 .cat-icon {
    font-size: 2.5rem;
    font-weight: 300;
@@ -1051,30 +897,22 @@ header.scrolled .logo {
    transition: transform 0.3s;
    line-height: 1;
 }
-
 .category-toggle.active .cat-icon {
    transform: rotate(45deg);
 }
-
-/* Category content accordion */
 .category-content {
    max-height: 0;
    overflow: hidden;
    transition: max-height 0.5s ease;
 }
-
 .category-content.active {
    max-height: 3000px;
    padding: 30px 0;
 }
-
-/* Item description */
-/* Tea menu styles */
 .tea-menu-grid {
    max-width: 900px;
    margin: 0 auto;
 }
-
 .tea-item {
    display: flex;
    justify-content: space-between;
@@ -1082,29 +920,24 @@ header.scrolled .logo {
    padding: 22px 10px;
    transition: background 0.3s;
 }
-
 .tea-item:hover {
    background: var(--soft-pink);
    border-radius: 10px;
 }
-
 .tea-info {
    flex: 1;
 }
-
 .tea-info h4 {
    font-family: 'Cormorant Garamond', serif;
    font-size: 1.3rem;
    color: var(--primary-red);
    margin-bottom: 6px;
 }
-
 .tea-info p {
    font-size: 0.9rem;
    color: #777;
    line-height: 1.5;
 }
-
 .tea-price {
    font-weight: 900;
    font-size: 1.2rem;
@@ -1113,22 +946,17 @@ header.scrolled .logo {
    margin-left: 30px;
    padding-top: 2px;
 }
-
 .tea-divider {
    height: 1px;
    background: repeating-linear-gradient(to right, #ddd 0, #ddd 6px, transparent 6px, transparent 12px);
    margin: 0 10px;
 }
-
-
 .products-grid {
    display: grid;
-   /* Giữ nguyên 4 cột nhưng giãn cách hợp lý hơn */
+   
    grid-template-columns: repeat(4, 1fr);
    gap: 30px;
 }
-
-
 .product-card {
    background: #FDF6EE;
    border: 0.5px solid rgba(141, 0, 33, 0.70);
@@ -1141,15 +969,10 @@ header.scrolled .logo {
    flex-direction: column;
    text-align: center;
 }
-
-
 .product-card:hover {
    transform: translateY(-5px);
    box-shadow: 0 10px 25px rgba(163, 29, 55, 0.1);
 }
-
-
-/* --- PHẦN HÌNH ẢNH --- */
 .p-image {
    position: relative;
    overflow: hidden;
@@ -1159,7 +982,6 @@ header.scrolled .logo {
    aspect-ratio: 3 / 4;
    background: #FDF6EE;
 }
-
 .p-image img {
    width: 100%;
    height: 100%;
@@ -1168,14 +990,9 @@ header.scrolled .logo {
    display: block;
    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
-/* Hiệu ứng zoom mượt mà khi di chuột */
 .product-card:hover .p-image img {
    transform: scale(1.06);
 }
-
-
-/* Nhãn HOT/NEW cũng chỉnh to lên xíu cho cân đối */
 .badge-hot, .badge-new {
    position: absolute;
    top: 15px; left: 15px;
@@ -1189,9 +1006,6 @@ header.scrolled .logo {
 }
 .badge-hot { background: #ff4757; }
 .badge-new { background: #2ed573; }
-
-
-/* --- PHẦN THÔNG TIN --- */
 .product-card h4 {
    font-family: 'Cormorant Garamond', serif;
    font-weight: 400;
@@ -1201,8 +1015,6 @@ header.scrolled .logo {
    padding: 1.2rem 1.5rem 0;
    text-align: center;
 }
-
-
 .price {
    color: var(--primary-red);
    font-weight: 400;
@@ -1212,8 +1024,6 @@ header.scrolled .logo {
    text-align: center;
    letter-spacing: 0.5px;
 }
-
-
 .item-desc {
    font-size: 0.85rem;
    color: #999;
@@ -1222,8 +1032,6 @@ header.scrolled .logo {
    padding: 0 1.5rem;
    text-align: center;
 }
-
-
 .btn-cart {
    width: calc(100% - 3rem);
    margin: 0 auto;
@@ -1239,19 +1047,13 @@ header.scrolled .logo {
    font-size: 0.8rem;
    letter-spacing: 1px;
 }
-
-
 .btn-cart:hover {
    background: var(--primary-red);
    color: white;
 }
-
-
-/* --- FLAVOR HOVER EFFECTS (colored backdrop behind card) --- */
 .product-card {
    position: relative;
 }
-
 .product-card::before {
    content: '';
    position: absolute;
@@ -1265,39 +1067,27 @@ header.scrolled .logo {
    transition: all 0.45s ease;
    transform: rotate(0deg);
 }
-
 .product-card:hover::before {
    opacity: 1;
 }
-
-/* Each flavor gets a colored backdrop with slight rotation */
 [data-flavor="strawberry"]::before { background-color: #ffb6c8; }
 [data-flavor="strawberry"]:hover::before { transform: rotate(-3deg); }
-
 [data-flavor="matcha"]::before { background-color: #b8e6c0; }
 [data-flavor="matcha"]:hover::before { transform: rotate(3deg); }
-
 [data-flavor="mango"]::before { background-color: #ffe5a0; }
 [data-flavor="mango"]:hover::before { transform: rotate(-3deg); }
-
 [data-flavor="peach"]::before { background-color: #ffd4cc; }
 [data-flavor="peach"]:hover::before { transform: rotate(3deg); }
-
 [data-flavor="oreo"]::before { background-color: #d5d5e0; }
 [data-flavor="oreo"]:hover::before { transform: rotate(-3deg); }
-
 [data-flavor="chocolate"]::before { background-color: #d4b08c; }
 [data-flavor="chocolate"]:hover::before { transform: rotate(3deg); }
-
 [data-flavor="dubai"]::before { background-color: #c8e6a0; }
 [data-flavor="dubai"]:hover::before { transform: rotate(-3deg); }
-
 [data-flavor="daifuku"]::before { background-color: #ffc0cb; }
 [data-flavor="daifuku"]:hover::before { transform: rotate(3deg); }
-
 [data-flavor="mango-passion"]::before { background-color: #ffe0a0; }
 [data-flavor="mango-passion"]:hover::before { transform: rotate(-3deg); }
-
 [data-flavor="peach-lychee"]::before { background-color: #ffd6e0; }
 [data-flavor="peach-lychee"]:hover::before { transform: rotate(3deg); }
 [data-flavor="blueberry"]::before { background-color: #d4d0f5; }
@@ -1320,8 +1110,6 @@ header.scrolled .logo {
 [data-flavor="orange-americano"]:hover::before { transform: rotate(-3deg); }
 [data-flavor="caramel-coffee"]::before { background-color: #e8d0b0; }
 [data-flavor="caramel-coffee"]:hover::before { transform: rotate(2deg); }
-
-/* Coquette-style illustrated decorations around card */
 .product-card::after {
    content: '';
    position: absolute;
@@ -1334,14 +1122,11 @@ header.scrolled .logo {
    background-repeat: no-repeat;
    filter: blur(1.5px);
 }
-
 .product-card:hover::after {
    opacity: 0.75;
    filter: blur(1px);
    transform: scale(1);
 }
-
-/* Strawberry with bow */
 [data-flavor="strawberry"]::after {
    width: 70px; height: 80px;
    top: -25px; right: -18px;
@@ -1350,8 +1135,6 @@ header.scrolled .logo {
 [data-flavor="strawberry"]:hover::after {
    transform: scale(1) rotate(-8deg);
 }
-
-/* Matcha tea leaf with ribbon */
 [data-flavor="matcha"]::after {
    width: 75px; height: 70px;
    top: -20px; left: -15px;
@@ -1360,8 +1143,6 @@ header.scrolled .logo {
 [data-flavor="matcha"]:hover::after {
    transform: scale(1) rotate(10deg);
 }
-
-/* Mango with bow */
 [data-flavor="mango"]::after {
    width: 70px; height: 75px;
    bottom: 35px; right: -18px;
@@ -1370,8 +1151,6 @@ header.scrolled .logo {
 [data-flavor="mango"]:hover::after {
    transform: scale(1) rotate(8deg);
 }
-
-/* Peach with heart + bow */
 [data-flavor="peach"]::after {
    width: 72px; height: 78px;
    top: -22px; right: -14px;
@@ -1380,8 +1159,6 @@ header.scrolled .logo {
 [data-flavor="peach"]:hover::after {
    transform: scale(1) rotate(-8deg);
 }
-
-/* Oreo cookie with bow */
 [data-flavor="oreo"]::after {
    width: 68px; height: 68px;
    top: -18px; left: -14px;
@@ -1390,8 +1167,6 @@ header.scrolled .logo {
 [data-flavor="oreo"]:hover::after {
    transform: scale(1) rotate(10deg);
 }
-
-/* Chocolate bar with ribbon */
 [data-flavor="chocolate"]::after {
    width: 65px; height: 75px;
    bottom: 45px; left: -16px;
@@ -1400,8 +1175,6 @@ header.scrolled .logo {
 [data-flavor="chocolate"]:hover::after {
    transform: scale(1) rotate(-10deg);
 }
-
-/* Dubai pistachio with bow */
 [data-flavor="dubai"]::after {
    width: 68px; height: 72px;
    top: -20px; right: -12px;
@@ -1410,8 +1183,6 @@ header.scrolled .logo {
 [data-flavor="dubai"]:hover::after {
    transform: scale(1) rotate(8deg);
 }
-
-/* Daifuku cherry blossom with ribbon */
 [data-flavor="daifuku"]::after {
    width: 72px; height: 72px;
    top: -18px; left: -12px;
@@ -1420,8 +1191,6 @@ header.scrolled .logo {
 [data-flavor="daifuku"]:hover::after {
    transform: scale(1) rotate(-8deg);
 }
-
-/* Mango Passion with bow */
 [data-flavor="mango-passion"]::after {
    width: 70px; height: 75px;
    top: -22px; right: -16px;
@@ -1430,8 +1199,6 @@ header.scrolled .logo {
 [data-flavor="mango-passion"]:hover::after {
    transform: scale(1) rotate(8deg);
 }
-
-/* Peach Lychee with bow */
 [data-flavor="peach-lychee"]::after {
    width: 70px; height: 75px;
    top: -20px; left: -14px;
@@ -1440,8 +1207,6 @@ header.scrolled .logo {
 [data-flavor="peach-lychee"]:hover::after {
    transform: scale(1) rotate(-8deg);
 }
-
-/* Red bean */
 [data-flavor="red-bean"]::after {
    width: 65px; height: 65px;
    top: -20px; right: -15px;
@@ -1450,8 +1215,6 @@ header.scrolled .logo {
 [data-flavor="red-bean"]:hover::after {
    transform: scale(1) rotate(10deg);
 }
-
-/* Blueberry */
 [data-flavor="blueberry"]::after {
    width: 70px; height: 70px;
    top: -22px; left: -16px;
@@ -1460,8 +1223,6 @@ header.scrolled .logo {
 [data-flavor="blueberry"]:hover::after {
    transform: scale(1) rotate(-12deg);
 }
-
-/* Matcha drink - tea cup */
 [data-flavor="matcha-drink"]::after {
    width: 65px; height: 70px;
    top: -22px; right: -14px;
@@ -1470,8 +1231,6 @@ header.scrolled .logo {
 [data-flavor="matcha-drink"]:hover::after {
    transform: scale(1) rotate(8deg);
 }
-
-/* Black grape */
 [data-flavor="black-grape"]::after {
    width: 65px; height: 75px;
    top: -25px; left: -14px;
@@ -1480,8 +1239,6 @@ header.scrolled .logo {
 [data-flavor="black-grape"]:hover::after {
    transform: scale(1) rotate(-10deg);
 }
-
-/* Hojicha drink */
 [data-flavor="hojicha-drink"]::after {
    width: 65px; height: 70px;
    top: -20px; right: -16px;
@@ -1490,8 +1247,6 @@ header.scrolled .logo {
 [data-flavor="hojicha-drink"]:hover::after {
    transform: scale(1) rotate(6deg);
 }
-
-/* Bubble tea */
 [data-flavor="bubble-tea"]::after {
    width: 60px; height: 75px;
    top: -24px; left: -12px;
@@ -1500,8 +1255,6 @@ header.scrolled .logo {
 [data-flavor="bubble-tea"]:hover::after {
    transform: scale(1) rotate(-8deg);
 }
-
-/* Thai mango */
 [data-flavor="thai-mango"]::after {
    width: 70px; height: 70px;
    top: -20px; right: -18px;
@@ -1510,8 +1263,6 @@ header.scrolled .logo {
 [data-flavor="thai-mango"]:hover::after {
    transform: scale(1) rotate(10deg);
 }
-
-/* Matcha frappe */
 [data-flavor="matcha-frappe"]::after {
    width: 65px; height: 75px;
    top: -24px; left: -14px;
@@ -1520,8 +1271,6 @@ header.scrolled .logo {
 [data-flavor="matcha-frappe"]:hover::after {
    transform: scale(1) rotate(-10deg);
 }
-
-/* Orange americano */
 [data-flavor="orange-americano"]::after {
    width: 70px; height: 70px;
    top: -22px; right: -16px;
@@ -1530,8 +1279,6 @@ header.scrolled .logo {
 [data-flavor="orange-americano"]:hover::after {
    transform: scale(1) rotate(8deg);
 }
-
-/* Caramel coffee frappe */
 [data-flavor="caramel-coffee"]::after {
    width: 65px; height: 75px;
    top: -24px; left: -14px;
@@ -1540,39 +1287,25 @@ header.scrolled .logo {
 [data-flavor="caramel-coffee"]:hover::after {
    transform: scale(1) rotate(-8deg);
 }
-
-
-/* --- RESPONSIVE (QUAN TRỌNG VÌ ẢNH TO) --- */
 @media (max-width: 1200px) {
    .products-grid { grid-template-columns: repeat(3, 1fr); }
 }
-
-
 @media (max-width: 900px) {
    .products-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
-
 @media (max-width: 600px) {
    .products-grid { grid-template-columns: 1fr; }
 }
-
-
-
-
-/* --- SOKO-STYLE MENU GRID (sub-pages) --- */
 .soko-menu {
    background: #FDF6EE;
    padding: 0 5% 100px;
 }
-
 .soko-page-title {
    text-align: center;
    padding: 120px 5% 0;
    margin-top: 80px;
    background: #FDF6EE;
 }
-
 .soko-page-title h2 {
    font-family: 'Cormorant Garamond', serif;
    font-size: 5rem;
@@ -1582,7 +1315,6 @@ header.scrolled .logo {
    text-transform: uppercase;
    margin-bottom: 24px;
 }
-
 .soko-page-title .soko-line {
    width: 85%;
    max-width: 1100px;
@@ -1590,7 +1322,6 @@ header.scrolled .logo {
    background: linear-gradient(to right, transparent, #9F0031, transparent);
    margin: 0 auto;
 }
-
 .soko-category-name {
    font-family: 'Cormorant Garamond', serif;
    font-size: 3.2rem;
@@ -1601,7 +1332,6 @@ header.scrolled .logo {
    max-width: 1100px;
    margin: 0 auto;
 }
-
 .soko-grid {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
@@ -1609,16 +1339,13 @@ header.scrolled .logo {
    max-width: 1100px;
    margin: 0 auto;
 }
-
 .soko-item {
    text-align: center;
    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
 .soko-item:hover {
    transform: translateY(-6px);
 }
-
 .soko-img {
    width: 100%;
    aspect-ratio: 1 / 1;
@@ -1626,7 +1353,6 @@ header.scrolled .logo {
    border-radius: 12px;
    background: #f0ebe4;
 }
-
 .soko-img img {
    width: 100%;
    height: 100%;
@@ -1635,11 +1361,9 @@ header.scrolled .logo {
    display: block;
    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
 .soko-item:hover .soko-img img {
    transform: scale(1.06);
 }
-
 .soko-item h3 {
    font-family: 'Cormorant Garamond', serif;
    font-weight: 400;
@@ -1649,7 +1373,6 @@ header.scrolled .logo {
    margin-bottom: 0;
    letter-spacing: 0.3px;
 }
-
 .soko-dash {
    display: block;
    width: 22px;
@@ -1658,7 +1381,6 @@ header.scrolled .logo {
    margin: 8px auto;
    opacity: 0.6;
 }
-
 .soko-price {
    font-size: 0.9rem;
    color: #9F0031;
@@ -1666,30 +1388,23 @@ header.scrolled .logo {
    letter-spacing: 1px;
    opacity: 0.75;
 }
-
 @media (max-width: 1024px) {
    .soko-grid { grid-template-columns: repeat(3, 1fr); }
    .soko-page-title h2 { font-size: 3.2rem; letter-spacing: 6px; }
 }
-
 @media (max-width: 768px) {
    .soko-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
    .soko-page-title h2 { font-size: 2.2rem; letter-spacing: 4px; }
    .soko-page-title { padding-top: 100px; }
    .soko-category-name { font-size: 2.2rem; }
 }
-
 @media (max-width: 480px) {
    .soko-grid { grid-template-columns: 1fr; max-width: 320px; }
 }
-
-
-/* --- MENU CATEGORIES PAGE (Soko-style) --- */
 .menu-categories {
    background: #FDF6EE;
    padding: 0;
 }
-
 .menu-cat-block {
    display: flex;
    align-items: stretch;
@@ -1697,11 +1412,9 @@ header.scrolled .logo {
    min-height: 520px;
    overflow: hidden;
 }
-
 .menu-cat-block.reverse {
    flex-direction: row-reverse;
 }
-
 .menu-cat-text {
    flex: 1;
    padding: 80px 6%;
@@ -1710,19 +1423,15 @@ header.scrolled .logo {
    flex-direction: column;
    justify-content: center;
 }
-
 .menu-cat-block:nth-child(2) .menu-cat-text {
    background: rgba(253, 240, 242, 0.6);
 }
-
 .menu-cat-block:nth-child(3) .menu-cat-text {
    background: rgba(200, 68, 107, 0.08);
 }
-
 .menu-cat-label {
    display: none;
 }
-
 .menu-cat-text h2 {
    font-family: 'Cormorant Garamond', serif;
    font-size: 2.6rem;
@@ -1733,7 +1442,6 @@ header.scrolled .logo {
    text-transform: uppercase;
    letter-spacing: 2px;
 }
-
 .menu-cat-text p {
    font-family: 'Cormorant Garamond', serif;
    font-size: 1rem;
@@ -1743,7 +1451,6 @@ header.scrolled .logo {
    margin-bottom: 35px;
    max-width: 400px;
 }
-
 .menu-cat-link {
    font-family: 'Cormorant Garamond', serif;
    font-size: 1.25rem;
@@ -1760,7 +1467,6 @@ header.scrolled .logo {
    display: inline;
    letter-spacing: 0.5px;
 }
-
 .menu-cat-link:hover {
    color: #C8446B;
    background: none;
@@ -1768,11 +1474,9 @@ header.scrolled .logo {
    transform: none;
    text-underline-offset: 8px;
 }
-
 .menu-cat-link span {
    display: none;
 }
-
 .menu-cat-image {
    flex: 1;
    overflow: hidden;
@@ -1781,7 +1485,6 @@ header.scrolled .logo {
    border: none;
    aspect-ratio: auto;
 }
-
 .menu-cat-image img {
    width: 100%;
    height: 100%;
@@ -1789,19 +1492,15 @@ header.scrolled .logo {
    display: block;
    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
 .menu-cat-block:hover .menu-cat-image img {
    transform: scale(1.04);
 }
-
-/* Back to menu link */
 .back-to-menu {
    max-width: 1100px;
    margin: 0 auto;
    padding: 24px 5% 0;
    background: #FDF6EE;
 }
-
 .back-to-menu a {
    font-family: 'Cormorant Garamond', serif;
    font-size: 1.05rem;
@@ -1813,40 +1512,31 @@ header.scrolled .logo {
    transition: all 0.3s;
    letter-spacing: 0.3px;
 }
-
 .back-to-menu a:hover {
    color: #C8446B;
    text-underline-offset: 7px;
 }
-
 @media (max-width: 768px) {
    .menu-cat-block,
    .menu-cat-block.reverse {
        flex-direction: column;
    }
-
    .menu-cat-text {
        padding: 40px 5%;
    }
-
    .menu-cat-text h2 {
        font-size: 2rem;
    }
-
    .menu-cat-image {
        width: 100%;
        height: 300px;
    }
 }
-
-
-/* --- CAMPAIGNS SECTION --- */
 .campaigns {
    padding: 80px 10%;
    background: #fdf6ee;
    text-align: center;
 }
-
 .campaigns-grid {
    display: grid;
    grid-template-columns: repeat(2, 1fr);
@@ -1854,7 +1544,6 @@ header.scrolled .logo {
    max-width: 1200px;
    margin: 0 auto;
 }
-
 .campaign-card {
    background: white;
    border-radius: 1.25rem;
@@ -1864,49 +1553,40 @@ header.scrolled .logo {
    text-align: left;
    position: relative;
 }
-
 .campaign-card:hover {
    transform: translateY(-6px);
    box-shadow: 0 16px 35px rgba(163, 29, 55, 0.12);
 }
-
 .campaign-card[data-color="pink"]:hover { background: #ffb6c8; }
 .campaign-card[data-color="yellow"]:hover { background: #ffeaba; }
 .campaign-card[data-color="blue"]:hover { background: #98cfe4; }
 .campaign-card[data-color="green"]:hover { background: #b8e6c0; }
-
 .campaign-card:hover .campaign-info h3,
 .campaign-card:hover .campaign-info p,
 .campaign-card:hover .campaign-date {
    color: white;
 }
-
 .campaign-card:hover .campaign-btn {
    background: white;
    color: var(--primary-red);
 }
-
 .campaign-img {
    width: 100%;
    height: 250px;
    overflow: hidden;
 }
-
 .campaign-img img {
    width: 100%;
    height: 100%;
    object-fit: cover;
    transition: transform 0.6s ease;
 }
-
 .campaign-card:hover .campaign-img img {
    transform: scale(1.05);
 }
-
 .campaign-info {
    padding: 25px;
 }
-
 .campaign-date {
    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
    font-size: 0.85rem;
@@ -1915,7 +1595,6 @@ header.scrolled .logo {
    text-transform: uppercase;
    transition: color 0.4s ease;
 }
-
 .campaign-info h3 {
    font-family: 'Cormorant Garamond', serif;
    color: var(--primary-red);
@@ -1923,7 +1602,6 @@ header.scrolled .logo {
    margin: 10px 0 12px;
    transition: color 0.4s ease;
 }
-
 .campaign-info p {
    font-size: 0.95rem;
    color: #666;
@@ -1931,7 +1609,6 @@ header.scrolled .logo {
    margin-bottom: 20px;
    transition: color 0.4s ease;
 }
-
 .campaign-btn {
    display: inline-block;
    padding: 10px 28px;
@@ -1944,17 +1621,12 @@ header.scrolled .logo {
    letter-spacing: 1px;
    transition: all 0.3s ease;
 }
-
 .campaign-btn:hover {
    transform: scale(1.05);
 }
-
 @media (max-width: 900px) {
    .campaigns-grid { grid-template-columns: 1fr; }
 }
-
-
-/* --- PAGE BANNER (subpages) --- */
 .page-banner {
    margin-top: 80px;
    padding: 100px 20px 70px;
@@ -1963,12 +1635,10 @@ header.scrolled .logo {
    position: relative;
    overflow: hidden;
 }
-
 .page-banner-video {
    margin-top: 0;
    padding: 180px 20px 90px;
 }
-
 .banner-bg-video {
    position: absolute;
    top: 50%;
@@ -1981,7 +1651,6 @@ header.scrolled .logo {
    object-fit: cover;
    z-index: 0;
 }
-
 .banner-video-overlay {
    position: absolute;
    top: 0;
@@ -1991,13 +1660,11 @@ header.scrolled .logo {
    background: rgba(255, 255, 255, 0.5);
    z-index: 1;
 }
-
 .page-banner-video h1,
 .page-banner-video p {
    position: relative;
    z-index: 2;
 }
-
 .page-banner h1 {
    font-family: 'Cormorant Garamond', serif;
    font-size: 4rem;
@@ -2007,7 +1674,6 @@ header.scrolled .logo {
    letter-spacing: 4px;
    text-transform: uppercase;
 }
-
 .page-banner p {
    font-family: 'Cormorant Garamond', serif;
    font-size: 1.05rem;
@@ -2015,14 +1681,10 @@ header.scrolled .logo {
    color: #999;
    letter-spacing: 1px;
 }
-
-
-/* --- CONTACT CARDS SECTION --- */
 .contact-cards-section {
    padding: 60px 5% 40px;
    background: #FDF6EE;
 }
-
 .contact-cards-grid {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
@@ -2030,7 +1692,6 @@ header.scrolled .logo {
    max-width: 1200px;
    margin: 0 auto;
 }
-
 .cute-contact-card {
    background: white;
    border: 0.5px solid rgba(141, 0, 33, 0.25);
@@ -2040,13 +1701,11 @@ header.scrolled .logo {
    transition: all 0.4s ease;
    position: relative;
 }
-
 .cute-contact-card:hover {
    transform: translateY(-6px);
    box-shadow: 0 12px 30px rgba(163, 29, 55, 0.1);
    border-color: rgba(141, 0, 33, 0.5);
 }
-
 .cute-card-icon {
    width: 70px;
    height: 70px;
@@ -2058,16 +1717,13 @@ header.scrolled .logo {
    justify-content: center;
    transition: all 0.4s ease;
 }
-
 .cute-contact-card:hover .cute-card-icon {
    background: var(--primary-red);
    transform: scale(1.1) rotate(-5deg);
 }
-
 .cute-contact-card:hover .cute-card-icon svg {
    stroke: white;
 }
-
 .cute-contact-card h3 {
    font-family: 'Cormorant Garamond', serif;
    color: var(--primary-red);
@@ -2075,20 +1731,16 @@ header.scrolled .logo {
    margin-bottom: 12px;
    font-weight: 500;
 }
-
 .cute-contact-card p {
    font-size: 0.9rem;
    color: #777;
    line-height: 1.7;
    margin-bottom: 4px;
 }
-
-/* --- CONTACT CONNECT (MAP + FORM) --- */
 .contact-connect {
    padding: 40px 5% 80px;
    background: #FDF6EE;
 }
-
 .connect-container {
    max-width: 1200px;
    margin: 0 auto;
@@ -2097,27 +1749,23 @@ header.scrolled .logo {
    gap: 40px;
    align-items: stretch;
 }
-
 .connect-map {
    min-height: 450px;
    border-radius: 1.25rem;
    overflow: hidden;
    border: 0.5px solid rgba(141, 0, 33, 0.25);
 }
-
 .connect-map iframe {
    width: 100%;
    height: 100%;
    min-height: 450px;
 }
-
 .connect-form {
    background: white;
    border: 0.5px solid rgba(141, 0, 33, 0.25);
    border-radius: 1.25rem;
    padding: 40px 36px;
 }
-
 .connect-form h2 {
    font-family: 'Cormorant Garamond', serif;
    color: var(--primary-red);
@@ -2125,14 +1773,12 @@ header.scrolled .logo {
    margin-bottom: 8px;
    font-weight: 500;
 }
-
 .connect-subtitle {
    font-size: 0.95rem;
    color: #999;
    margin-bottom: 28px;
    line-height: 1.5;
 }
-
 .connect-form input,
 .connect-form textarea {
    width: 100%;
@@ -2146,18 +1792,15 @@ header.scrolled .logo {
    background: #fdf9f5;
    margin-bottom: 16px;
 }
-
 .connect-form input:focus,
 .connect-form textarea:focus {
    border-color: var(--primary-red);
    background: white;
    box-shadow: 0 0 0 3px rgba(163, 29, 55, 0.08);
 }
-
 .connect-form textarea {
    resize: vertical;
 }
-
 .connect-form button {
    width: 100%;
    padding: 16px;
@@ -2173,19 +1816,16 @@ header.scrolled .logo {
    transition: all 0.3s;
    text-transform: uppercase;
 }
-
 .connect-form button:hover {
    background: #801328;
    transform: translateY(-2px);
    box-shadow: 0 6px 20px rgba(163, 29, 55, 0.25);
 }
-
 @media (max-width: 1024px) {
    .contact-cards-grid {
        grid-template-columns: repeat(2, 1fr);
    }
 }
-
 @media (max-width: 768px) {
    .contact-cards-grid {
        grid-template-columns: 1fr;
@@ -2200,9 +1840,6 @@ header.scrolled .logo {
        font-size: 2.5rem;
    }
 }
-
-
-/* --- 6. FOOTER --- */
 footer {
    background: var(--primary-red);
    color: var(--white);
@@ -2229,9 +1866,6 @@ footer {
    opacity: 0.7;
    text-transform: uppercase;
 }
-
-
-/* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
    .features-grid, .products-grid { grid-template-columns: repeat(2, 1fr); }
    .footer-container { grid-template-columns: 1fr 1fr; }
@@ -2244,4 +1878,3 @@ footer {
    .footer-container { grid-template-columns: 1fr; text-align: center; }
    .menu-overlay-nav a { font-size: 2rem; }
 }
-

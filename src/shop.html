@@ -28,7 +28,6 @@
            color: #666;
            letter-spacing: 1px;
        }
-
        /* Filter Bar */
        .filter-bar {
            display: flex;
@@ -57,7 +56,6 @@
            background: #9F0031;
            color: #fff;
        }
-
        /* Product Grid */
        .shop-section {
            padding: 20px 20px 80px;
@@ -180,7 +178,6 @@
        .btn-cart.added {
            background: #4a8c5c;
        }
-
        /* Floating Cart */
        .floating-cart {
            position: fixed;
@@ -221,7 +218,6 @@
            transition: opacity 0.3s ease;
        }
        .cart-count.show { opacity: 1; }
-
        /* No results message */
        .no-results {
            text-align: center;
@@ -232,7 +228,6 @@
            display: none;
            grid-column: 1 / -1;
        }
-
        /* Responsive */
        @media (max-width: 1024px) {
            .products-grid { grid-template-columns: repeat(3, 1fr); }
@@ -251,7 +246,6 @@
    </style>
 </head>
 <body>
-
    <header>
        <div class="header-content">
            <a href="index.html" class="logo"><img src="../assets/img/Gemini_Generated_Image_1439e1439e1439e1.jpeg" alt="Logo" class="logo-flower">MOCHI FUWA</a>
@@ -262,7 +256,6 @@
            </button>
        </div>
    </header>
-
    <div class="menu-overlay" id="menuOverlay">
        <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close menu">&times;</button>
        <nav class="menu-overlay-nav">
@@ -279,33 +272,28 @@
            <p>Mochi Fuwa</p>
        </div>
    </div>
-
-   <!-- Banner -->
+   
    <div class="shop-banner">
        <h1>Our Shop</h1>
        <p>Khám phá bộ sưu tập mochi &amp; thức uống của Mochi Fuwa</p>
    </div>
-
    <div class="marquee-bar">
        <div class="marquee-track">
            <span>MOCHI FUWA ✦ MOCHI FUWA ✦ MOCHI FUWA ✦ MOCHI FUWA ✦ MOCHI FUWA ✦ MOCHI FUWA ✦ MOCHI FUWA ✦ MOCHI FUWA ✦ </span>
            <span>MOCHI FUWA ✦ MOCHI FUWA ✦ MOCHI FUWA ✦ MOCHI FUWA ✦ MOCHI FUWA ✦ MOCHI FUWA ✦ MOCHI FUWA ✦ MOCHI FUWA ✦ </span>
        </div>
    </div>
-
-   <!-- Filter Bar -->
+   
    <div class="filter-bar">
        <button class="filter-btn active" data-filter="all">Tất Cả</button>
        <button class="filter-btn" data-filter="mochi">Mochi</button>
        <button class="filter-btn" data-filter="drinks">Thức Uống</button>
        <button class="filter-btn" data-filter="new">New Arrivals</button>
    </div>
-
-   <!-- Products Grid -->
+   
    <section class="shop-section">
        <div class="products-grid" id="productsGrid">
-
-           <!-- Mochi Products -->
+           
            <div class="shop-card" data-category="mochi">
                <div class="shop-card-img">
                    <img src="../assets/img/mochi-1.jpeg" alt="Hồng Sắc">
@@ -320,7 +308,6 @@
                    <button class="btn-cart" onclick="addToCart('Hồng Sắc', 45000, '../assets/img/mochi-1.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
            <div class="shop-card" data-category="mochi">
                <div class="shop-card-img">
                    <img src="../assets/img/mochi-2.jpeg" alt="Xích Sắc">
@@ -335,7 +322,6 @@
                    <button class="btn-cart" onclick="addToCart('Xích Sắc', 38000, '../assets/img/mochi-2.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
            <div class="shop-card" data-category="mochi">
                <div class="shop-card-img">
                    <img src="../assets/img/mochi-3.jpeg" alt="Ngọc Sắc">
@@ -350,7 +336,6 @@
                    <button class="btn-cart" onclick="addToCart('Ngọc Sắc', 48000, '../assets/img/mochi-3.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
            <div class="shop-card" data-category="mochi">
                <div class="shop-card-img">
                    <img src="../assets/img/mochi-4.jpeg" alt="Tử Sắc">
@@ -365,7 +350,6 @@
                    <button class="btn-cart" onclick="addToCart('Tử Sắc', 46000, '../assets/img/mochi-4.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
            <div class="shop-card" data-category="mochi">
                <div class="shop-card-img">
                    <img src="../assets/img/mochi-5.jpeg" alt="Lục Nguyệt">
@@ -380,7 +364,6 @@
                    <button class="btn-cart" onclick="addToCart('Lục Nguyệt', 42000, '../assets/img/mochi-5.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
            <div class="shop-card" data-category="mochi">
                <div class="shop-card-img">
                    <img src="../assets/img/mochi-6.jpeg" alt="Hắc Nguyệt">
@@ -395,7 +378,6 @@
                    <button class="btn-cart" onclick="addToCart('Hắc Nguyệt', 35000, '../assets/img/mochi-6.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
            <div class="shop-card" data-category="mochi">
                <div class="shop-card-img">
                    <img src="../assets/img/mochi-7.jpeg" alt="Nồng Nguyệt">
@@ -410,7 +392,6 @@
                    <button class="btn-cart" onclick="addToCart('Nồng Nguyệt', 45000, '../assets/img/mochi-7.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
            <div class="shop-card" data-category="mochi">
                <div class="shop-card-img">
                    <img src="../assets/img/mochi-8.jpeg" alt="Ngọc Nguyệt">
@@ -425,8 +406,7 @@
                    <button class="btn-cart" onclick="addToCart('Ngọc Nguyệt', 38000, '../assets/img/mochi-8.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
-           <!-- New Arrivals -->
+           
            <div class="shop-card" data-category="new">
                <div class="shop-card-img">
                    <span class="new-badge">NEW</span>
@@ -442,7 +422,6 @@
                    <button class="btn-cart" onclick="addToCart('Matcha Rose', 52000, '../assets/img/mochi-9.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
            <div class="shop-card" data-category="new">
                <div class="shop-card-img">
                    <span class="new-badge">NEW</span>
@@ -458,8 +437,7 @@
                    <button class="btn-cart" onclick="addToCart('Chocolate Fuwa', 50000, '../assets/img/mochi-10.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
-           <!-- Drinks -->
+           
            <div class="shop-card" data-category="drinks">
                <div class="shop-card-img">
                    <img src="../assets/img/drink-1.jpeg" alt="Lục Duyên">
@@ -474,7 +452,6 @@
                    <button class="btn-cart" onclick="addToCart('Lục Duyên', 55000, '../assets/img/drink-1.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
            <div class="shop-card" data-category="drinks">
                <div class="shop-card-img">
                    <img src="../assets/img/drink-2.jpeg" alt="Tử Duyên">
@@ -489,7 +466,6 @@
                    <button class="btn-cart" onclick="addToCart('Tử Duyên', 50000, '../assets/img/drink-2.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
            <div class="shop-card" data-category="drinks">
                <div class="shop-card-img">
                    <img src="../assets/img/drink-3.jpeg" alt="Trầm Duyên">
@@ -504,7 +480,6 @@
                    <button class="btn-cart" onclick="addToCart('Trầm Duyên', 55000, '../assets/img/drink-3.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
            <div class="shop-card" data-category="drinks">
                <div class="shop-card-img">
                    <img src="../assets/img/drink-4.jpeg" alt="Ngọc Duyên">
@@ -519,7 +494,6 @@
                    <button class="btn-cart" onclick="addToCart('Ngọc Duyên', 52000, '../assets/img/drink-4.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
            <div class="shop-card" data-category="drinks">
                <div class="shop-card-img">
                    <img src="../assets/img/drink-5.jpeg" alt="Thai Mango Juice">
@@ -534,7 +508,6 @@
                    <button class="btn-cart" onclick="addToCart('Thai Mango Juice', 48000, '../assets/img/drink-5.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
            <div class="shop-card" data-category="drinks">
                <div class="shop-card-img">
                    <img src="../assets/img/drink-6.jpeg" alt="Matcha Frappe">
@@ -549,19 +522,16 @@
                    <button class="btn-cart" onclick="addToCart('Matcha Frappe', 58000, '../assets/img/drink-6.jpeg', this)">Thêm vào giỏ</button>
                </div>
            </div>
-
            <div class="no-results" id="noResults">Không tìm thấy sản phẩm.</div>
        </div>
    </section>
-
-   <!-- Floating Cart -->
+   
    <a href="cart.html" class="floating-cart" id="floatingCart">
        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/>
        </svg>
        <span class="cart-count" id="cartCount">0</span>
    </a>
-
    <footer>
        <div class="footer-container">
            <div class="footer-brand">
@@ -585,16 +555,13 @@
            <p>copyright &copy; 2026. all rights reserved.</p>
        </div>
    </footer>
-
    <script src="../script/script.js"></script>
    <script>
        // Menu overlay
-
        // Filter
        const filterBtns = document.querySelectorAll('.filter-btn');
        const cards = document.querySelectorAll('.shop-card');
        const noResults = document.getElementById('noResults');
-
        filterBtns.forEach(btn => {
            btn.addEventListener('click', () => {
                filterBtns.forEach(b => b.classList.remove('active'));
@@ -609,7 +576,6 @@
                noResults.style.display = visible === 0 ? 'block' : 'none';
            });
        });
-
        // Cart
        function updateCartCount() {
            const cart = JSON.parse(localStorage.getItem('mochiCart') || '[]');
@@ -618,7 +584,6 @@
            countEl.textContent = total;
            countEl.classList.toggle('show', total > 0);
        }
-
        function addToCart(name, price, image, btn) {
            let cart = JSON.parse(localStorage.getItem('mochiCart') || '[]');
            const existing = cart.find(i => i.name === name);
@@ -636,7 +601,6 @@
            }, 1500);
            updateCartCount();
        }
-
        updateCartCount();
    </script>
 </body>

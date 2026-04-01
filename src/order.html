@@ -16,7 +16,6 @@
            padding-left: 20px;
            padding-right: 20px;
        }
-
        .order-title {
            font-family: 'Cormorant Garamond', serif;
            font-size: 2.8rem;
@@ -26,7 +25,6 @@
            margin-bottom: 40px;
            letter-spacing: 2px;
        }
-
        .cart-empty {
            text-align: center;
            padding: 60px 20px;
@@ -51,7 +49,6 @@
        .cart-empty a:hover {
            background: #7a0026;
        }
-
        .cart-item {
            display: flex;
            align-items: center;
@@ -59,7 +56,6 @@
            padding: 20px 0;
            border-bottom: 1px solid rgba(159, 0, 49, 0.15);
        }
-
        .cart-item-img {
            width: 80px;
            height: 80px;
@@ -67,7 +63,6 @@
            object-fit: cover;
            flex-shrink: 0;
        }
-
        .cart-item-details {
            flex: 1;
        }
@@ -84,7 +79,6 @@
            color: #9F0031;
            font-weight: 500;
        }
-
        .cart-item-qty {
            display: flex;
            align-items: center;
@@ -118,7 +112,6 @@
            min-width: 20px;
            text-align: center;
        }
-
        .cart-item-remove {
            background: none;
            border: none;
@@ -131,7 +124,6 @@
        .cart-item-remove:hover {
            color: #9F0031;
        }
-
        .cart-summary {
            margin-top: 30px;
            padding: 25px;
@@ -154,7 +146,6 @@
            font-size: 1.15rem;
            color: #9F0031;
        }
-
        .order-form {
            margin-top: 40px;
        }
@@ -166,7 +157,6 @@
            margin-bottom: 24px;
            letter-spacing: 1px;
        }
-
        .form-group {
            margin-bottom: 18px;
        }
@@ -198,7 +188,6 @@
            resize: vertical;
            min-height: 80px;
        }
-
        .place-order-btn {
            display: block;
            width: 100%;
@@ -218,7 +207,6 @@
        .place-order-btn:hover {
            background: #7a0026;
        }
-
        .back-to-menu {
            display: inline-block;
            margin-bottom: 30px;
@@ -231,7 +219,6 @@
        .back-to-menu:hover {
            text-decoration: underline;
        }
-
        .order-success {
            display: none;
            text-align: center;
@@ -259,7 +246,6 @@
            font-family: 'Quicksand', sans-serif;
            font-weight: 600;
        }
-
        @media (max-width: 480px) {
            .order-title { font-size: 2rem; }
            .cart-item { gap: 12px; }
@@ -269,7 +255,6 @@
    </style>
 </head>
 <body>
-
    <header>
        <div class="header-content">
            <a href="index.html" class="logo"><img src="../assets/img/Gemini_Generated_Image_1439e1439e1439e1.jpeg" alt="Logo" class="logo-flower">MOCHI FUWA</a>
@@ -280,7 +265,6 @@
            </button>
        </div>
    </header>
-
    <div class="menu-overlay" id="menuOverlay">
        <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close menu">&times;</button>
        <nav class="menu-overlay-nav">
@@ -297,13 +281,10 @@
            <p>Mochi Fuwa</p>
        </div>
    </div>
-
    <div class="order-page">
        <a href="tea.html" class="back-to-menu">&larr; Quay lại thực đơn</a>
        <h1 class="order-title">Giỏ Hàng</h1>
-
        <div id="cartItems"></div>
-
        <div id="cartSummary" style="display:none;">
            <div class="cart-summary">
                <div class="cart-summary-row">
@@ -315,7 +296,6 @@
                    <span id="totalPrice">0 VND</span>
                </div>
            </div>
-
            <div class="order-form" id="orderForm">
                <h2>Thông tin đặt hàng</h2>
                <div class="form-group">
@@ -337,19 +317,16 @@
                <button class="place-order-btn" onclick="placeOrder()">Đặt Hàng</button>
            </div>
        </div>
-
        <div class="cart-empty" id="cartEmpty" style="display:none;">
            <p>Giỏ hàng của bạn đang trống</p>
            <a href="tea.html">Xem thực đơn</a>
        </div>
-
        <div class="order-success" id="orderSuccess">
            <h2>Đặt hàng thành công!</h2>
            <p>Cảm ơn bạn đã đặt hàng tại Mochi Fuwa. Chúng tôi sẽ liên hệ bạn sớm nhất.</p>
            <a href="tea.html">Tiếp tục mua sắm</a>
        </div>
    </div>
-
    <footer>
        <div class="footer-container">
            <div class="footer-brand">
@@ -373,35 +350,28 @@
            <p>copyright &copy; 2026. all rights reserved.</p>
        </div>
    </footer>
-
    <script src="../script/script.js"></script>
    <script>
        // Menu overlay
-
        // Cart rendering
        function formatPrice(num) {
            return num.toLocaleString('vi-VN') + ' VND';
        }
-
        function renderCart() {
            const cart = JSON.parse(localStorage.getItem('mochiCart') || '[]');
            const itemsEl = document.getElementById('cartItems');
            const summaryEl = document.getElementById('cartSummary');
            const emptyEl = document.getElementById('cartEmpty');
-
            if (cart.length === 0) {
                itemsEl.innerHTML = '';
                summaryEl.style.display = 'none';
                emptyEl.style.display = 'block';
                return;
            }
-
            emptyEl.style.display = 'none';
            summaryEl.style.display = 'block';
-
            let html = '';
            let subtotal = 0;
-
            cart.forEach((item, index) => {
                subtotal += item.price * item.qty;
                html += `
@@ -420,12 +390,10 @@
                    </div>
                `;
            });
-
            itemsEl.innerHTML = html;
            document.getElementById('subtotal').textContent = formatPrice(subtotal);
            document.getElementById('totalPrice').textContent = formatPrice(subtotal);
        }
-
        function changeQty(index, delta) {
            let cart = JSON.parse(localStorage.getItem('mochiCart') || '[]');
            cart[index].qty += delta;
@@ -435,23 +403,19 @@
            localStorage.setItem('mochiCart', JSON.stringify(cart));
            renderCart();
        }
-
        function removeItem(index) {
            let cart = JSON.parse(localStorage.getItem('mochiCart') || '[]');
            cart.splice(index, 1);
            localStorage.setItem('mochiCart', JSON.stringify(cart));
            renderCart();
        }
-
        function placeOrder() {
            const name = document.getElementById('custName').value.trim();
            const phone = document.getElementById('custPhone').value.trim();
-
            if (!name || !phone) {
                alert('Vui lòng nhập họ tên và số điện thoại');
                return;
            }
-
            localStorage.removeItem('mochiCart');
            document.getElementById('cartItems').style.display = 'none';
            document.getElementById('cartSummary').style.display = 'none';
@@ -459,7 +423,6 @@
            document.querySelector('.order-title').style.display = 'none';
            document.querySelector('.back-to-menu').style.display = 'none';
        }
-
        renderCart();
    </script>
 </body>
